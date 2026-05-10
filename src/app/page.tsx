@@ -1,36 +1,17 @@
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
-import { Section } from "@/components/layout/Section";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { GallerySection } from "@/components/sections/GallerySection";
+import { GraduationSection } from "@/components/sections/GraduationSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { MemoriesSection } from "@/components/sections/MemoriesSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { StudentsSection } from "@/components/sections/StudentsSection";
 import { TeachersSection } from "@/components/sections/TeachersSection";
+import { TerminalSection } from "@/components/sections/TerminalSection";
 import { TimeCapsuleSection } from "@/components/sections/TimeCapsuleSection";
 import { TimelineSection } from "@/components/sections/TimelineSection";
-import { Badge } from "@/components/ui/Badge";
-import { Card } from "@/components/ui/Card";
-import { Reveal } from "@/components/ui/Reveal";
-
-const placeholderSections = [
-  {
-    id: "terminal",
-    eyebrow: "Terminal da SIT",
-    title: "Uma assinatura interativa inspirada no universo da informática.",
-    description:
-      "Este bloco receberá uma experiência de terminal com comandos, mensagens e pequenos easter eggs da turma.",
-  },
-  {
-    id: "formatura",
-    eyebrow: "Formatura / Encerramento",
-    title: "O próximo capítulo começa com tudo o que foi construído até aqui.",
-    description:
-      "Seção final para mensagem de encerramento, contagem, agradecimentos e chamada emocional para a formatura.",
-  },
-];
 
 export default function Home() {
   return (
@@ -48,28 +29,8 @@ export default function Home() {
         <ProjectsSection />
         <MemoriesSection />
         <TimeCapsuleSection />
-
-        {placeholderSections.map((section, index) => (
-          <Section
-            key={section.id}
-            id={section.id}
-            className={index % 2 === 0 ? "bg-white/[0.015]" : undefined}
-          >
-            <Reveal>
-              <Card className="grid gap-8 md:grid-cols-[0.72fr_1.28fr] md:items-start">
-                <div>
-                  <Badge>{section.eyebrow}</Badge>
-                </div>
-                <div>
-                  <h2 className="section-title">{section.title}</h2>
-                  <p className="section-subtitle mt-4 max-w-3xl">
-                    {section.description}
-                  </p>
-                </div>
-              </Card>
-            </Reveal>
-          </Section>
-        ))}
+        <TerminalSection />
+        <GraduationSection />
       </main>
 
       <Footer />
