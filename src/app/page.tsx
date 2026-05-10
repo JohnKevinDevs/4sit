@@ -2,6 +2,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { Section } from "@/components/layout/Section";
 import { AboutSection } from "@/components/sections/AboutSection";
+import { GallerySection } from "@/components/sections/GallerySection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { TimelineSection } from "@/components/sections/TimelineSection";
@@ -10,13 +11,6 @@ import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
 
 const placeholderSections = [
-  {
-    id: "galeria",
-    eyebrow: "Galeria de momentos",
-    title: "Registros visuais da turma dentro e fora do laboratório.",
-    description:
-      "Área preparada para fotos, bastidores, eventos, apresentações e momentos que marcaram a convivência da SIT.",
-  },
   {
     id: "alunos",
     eyebrow: "Alunos da SIT",
@@ -78,6 +72,7 @@ export default function Home() {
         <AboutSection />
         <StatsSection />
         <TimelineSection />
+        <GallerySection />
 
         {placeholderSections.map((section, index) => (
           <Section
