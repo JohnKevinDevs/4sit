@@ -4,30 +4,18 @@ import { Section } from "@/components/layout/Section";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { GallerySection } from "@/components/sections/GallerySection";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { MemoriesSection } from "@/components/sections/MemoriesSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { StudentsSection } from "@/components/sections/StudentsSection";
 import { TeachersSection } from "@/components/sections/TeachersSection";
+import { TimeCapsuleSection } from "@/components/sections/TimeCapsuleSection";
 import { TimelineSection } from "@/components/sections/TimelineSection";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
 
 const placeholderSections = [
-  {
-    id: "memorias",
-    eyebrow: "Memórias especiais",
-    title: "Pequenas lembranças que explicam uma grande jornada.",
-    description:
-      "Espaço para frases, histórias curtas, momentos engraçados, mensagens marcantes e registros afetivos.",
-  },
-  {
-    id: "capsula",
-    eyebrow: "Cápsula do tempo",
-    title: "Mensagens de hoje para a próxima versão de cada um.",
-    description:
-      "Área preparada para mensagens dos alunos sobre futuro, sonhos, aprendizados e expectativas pós-formatura.",
-  },
   {
     id: "terminal",
     eyebrow: "Terminal da SIT",
@@ -58,6 +46,8 @@ export default function Home() {
         <StudentsSection />
         <TeachersSection />
         <ProjectsSection />
+        <MemoriesSection />
+        <TimeCapsuleSection />
 
         {placeholderSections.map((section, index) => (
           <Section

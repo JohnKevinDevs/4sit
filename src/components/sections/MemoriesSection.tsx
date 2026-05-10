@@ -1,0 +1,74 @@
+import { AlertCircle, BookOpen, HeartHandshake, Lightbulb, MessageSquareQuote, Sparkles } from "lucide-react";
+import { Section } from "@/components/layout/Section";
+import { Badge } from "@/components/ui/Badge";
+import { Card } from "@/components/ui/Card";
+import { Reveal } from "@/components/ui/Reveal";
+import { memories, type MemoryMock, type MemoryType } from "@/data/memories";
+
+const memoryMeta: Record<
+  MemoryType,
+  {
+    label: string;
+    icon: typeof Sparkles;
+    badge: "blue" | "gold" | "neutral";
+  }
+> = {
+  quote: { label: "Frase", icon: MessageSquareQuote, badge: "blue" },
+  moment: { label: "Momento", icon: Sparkles, badge: "gold" },
+  lesson: { label: "Aprendizado", icon: Lightbulb, badge: "blue" },
+  "inside-joke": { label: "Memória interna", icon: BookOpen, badge: "neutral" },
+  tribute: { label: "Homenagem", icon: HeartHandshake, badge: "gold" },
+};
+
+export function MemoriesSection() {
+  return (
+    <Section id="memorias">
+      <Reveal>
+        <div className="mx-auto max-w-3xl text-center">
+          <Badge className="mb-5">Memórias especiais</Badge>
+          <h2 className="section-title">Coisas que só a SIT entende</h2>
+          <p className="section-subtitle mt-4">
+            Toda turma tem frases, momentos e histórias que só quem viveu entende.
+            Essa seção guarda um pouco da personalidade da SIT.
+          </p>
+        </div>
+      </Reveal>
+
+      <Reveal delay={0.06}>
+        <div className="mx-auto mt-8 flex max-w-3xl items-start gap-3 rounded-lg border border-gold-soft bg-gold/10 p-4 text-sm leading-6 text-muted">
+          <AlertCircle className="mt-0.5 size-5 shrink-0 text-gold" aria-hidden="true" />
+          <p>Conteúdos sujeitos à validação da turma.</p>
+        </div>
+      </Reveal>
+
+      <div className="mt-10 grid min-w-0 gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {memories.map((memory, index) => (
+          <Reveal key={memory.id} delay={(index % 3) * 0.04}>
+            <MemoryCard memory={memory} />
+          </Reveal>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function MemoryCard({ memory }: { memory: MemoryMock }) {
+  const meta = memoryMeta[memory.type];
+  const Icon = meta.icon;
+
+  return (
+    <Card className="h-full overflow-hidden" padding="lg">
+      <div className="mb-6 flex items-center justify-between gap-4">
+        <span className="grid size-11 place-items-center rounded-md border border-blue-soft bg-primary/10 text-neon">
+          <Icon className="size-5" aria-hidden="true" />
+        </span>
+        <Badge variant={meta.badge}>{meta.label}</Badge>
+      </div>
+
+      <h3 className="text-2xl font-semibold leading-tight text-foreground">
+        {memory.title}
+      </h3>
+      <p className="mt-4 text-sm leading-7 text-muted">{memory.description}</p>
+    </Card>
+  );
+}
