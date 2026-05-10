@@ -4,28 +4,16 @@ import { Section } from "@/components/layout/Section";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { GallerySection } from "@/components/sections/GallerySection";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { StudentsSection } from "@/components/sections/StudentsSection";
+import { TeachersSection } from "@/components/sections/TeachersSection";
 import { TimelineSection } from "@/components/sections/TimelineSection";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
 
 const placeholderSections = [
-  {
-    id: "professores",
-    eyebrow: "Professores e homenagens",
-    title: "Reconhecimento a quem ensinou, orientou e caminhou junto.",
-    description:
-      "Bloco reservado para homenagens, agradecimentos e mensagens dedicadas aos professores e apoiadores da turma.",
-  },
-  {
-    id: "projetos",
-    eyebrow: "Projetos da turma",
-    title: "Soluções, experimentos e aprendizados colocados em prática.",
-    description:
-      "Aqui serão exibidos os projetos desenvolvidos pela turma, com tecnologias, imagens, descrições e links.",
-  },
   {
     id: "memorias",
     eyebrow: "Memórias especiais",
@@ -68,6 +56,8 @@ export default function Home() {
         <TimelineSection />
         <GallerySection />
         <StudentsSection />
+        <TeachersSection />
+        <ProjectsSection />
 
         {placeholderSections.map((section, index) => (
           <Section
