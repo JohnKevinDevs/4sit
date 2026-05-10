@@ -5,19 +5,13 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { GallerySection } from "@/components/sections/GallerySection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { StatsSection } from "@/components/sections/StatsSection";
+import { StudentsSection } from "@/components/sections/StudentsSection";
 import { TimelineSection } from "@/components/sections/TimelineSection";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
 
 const placeholderSections = [
-  {
-    id: "alunos",
-    eyebrow: "Alunos da SIT",
-    title: "As pessoas por trás dos projetos, ideias e histórias.",
-    description:
-      "Esta seção receberá cards individuais dos alunos, com foto, frase, destaque, links e informações editáveis.",
-  },
   {
     id: "professores",
     eyebrow: "Professores e homenagens",
@@ -73,6 +67,7 @@ export default function Home() {
         <StatsSection />
         <TimelineSection />
         <GallerySection />
+        <StudentsSection />
 
         {placeholderSections.map((section, index) => (
           <Section
