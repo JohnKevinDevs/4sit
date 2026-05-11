@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
 import { students, type StudentMock } from "@/data/students";
+import { stripPlaceholder } from "@/lib/utils";
 
 export function StudentsSection() {
   return (
@@ -12,7 +13,7 @@ export function StudentsSection() {
       <Reveal>
         <div className="mx-auto max-w-3xl text-center">
           <Badge className="mb-5">Alunos da SIT</Badge>
-          <h2 className="section-title">Alunos da SIT</h2>
+          <h2 className="section-title">Quem fez parte da turma</h2>
           <p className="section-subtitle mt-4">
             Cada aluno fez parte dessa história de um jeito único. Cada nome
             representa uma trajetória, uma personalidade e uma contribuição para a
@@ -64,12 +65,20 @@ function StudentCard({ student }: { student: StudentMock }) {
           {student.name}
         </h3>
         <p className="mt-4 border-l border-blue-soft pl-4 text-sm leading-6 text-muted">
-          “{student.quote}”
+          “{stripPlaceholder(student.quote)}”
         </p>
 
         <div className="mt-5 space-y-3">
-          <StudentDetail icon={Quote} label="Memória" value={student.memory} />
-          <StudentDetail icon={Target} label="Futuro" value={student.future} />
+          <StudentDetail
+            icon={Quote}
+            label="Memória"
+            value={stripPlaceholder(student.memory) ?? ""}
+          />
+          <StudentDetail
+            icon={Target}
+            label="Futuro"
+            value={stripPlaceholder(student.future) ?? ""}
+          />
         </div>
 
         <div className="mt-5 flex items-center gap-2 pt-1">

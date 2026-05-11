@@ -1,5 +1,6 @@
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { ActDivider } from "@/components/layout/ActDivider";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { GallerySection } from "@/components/sections/GallerySection";
 import { GraduationSection } from "@/components/sections/GraduationSection";
@@ -22,11 +23,13 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <StatsSection />
+        <ActDivider act="02" name="A Trajetória" glyph="chevron" />
         <TimelineSection />
         <GallerySection />
         <StudentsSection />
         <TeachersSection />
         <ProjectsSection />
+        <ActDivider act="03" name="O Legado" glyph="sparkles" />
         <MemoriesSection />
         <TimeCapsuleSection />
         <TerminalSection />

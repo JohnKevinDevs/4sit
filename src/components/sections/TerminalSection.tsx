@@ -19,11 +19,11 @@ const commands = ["ver_turma", "ver_memorias", "abrir_capsula", "salvar_legado"]
 export function TerminalSection() {
   return (
     <Section id="terminal">
-      <div className="grid min-w-0 gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <div className="grid min-w-0 gap-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-10">
         <Reveal>
           <div className="min-w-0">
             <Badge className="mb-5">Terminal da SIT</Badge>
-            <h2 className="section-title">Terminal da SIT</h2>
+            <h2 className="section-title">Um registro técnico do nosso legado</h2>
             <p className="section-subtitle mt-4 max-w-2xl">
               Uma homenagem ao nosso lado técnico: memórias, projetos e legado
               registrados como se fossem comandos de uma jornada.

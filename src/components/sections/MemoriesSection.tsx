@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
 import { memories, type MemoryMock, type MemoryType } from "@/data/memories";
+import { stripPlaceholder } from "@/lib/utils";
 
 const memoryMeta: Record<
   MemoryType,
@@ -35,8 +36,8 @@ export function MemoriesSection() {
       </Reveal>
 
       <Reveal delay={0.06}>
-        <div className="mx-auto mt-8 flex max-w-3xl items-start gap-3 rounded-lg border border-gold-soft bg-gold/10 p-4 text-sm leading-6 text-muted">
-          <AlertCircle className="mt-0.5 size-5 shrink-0 text-gold" aria-hidden="true" />
+        <div className="mx-auto mt-8 flex max-w-3xl items-start gap-3 rounded-md border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-muted">
+          <AlertCircle className="mt-0.5 size-5 shrink-0 text-neon/80" aria-hidden="true" />
           <p>Conteúdos sujeitos à validação da turma.</p>
         </div>
       </Reveal>
@@ -68,7 +69,9 @@ function MemoryCard({ memory }: { memory: MemoryMock }) {
       <h3 className="text-2xl font-semibold leading-tight text-foreground">
         {memory.title}
       </h3>
-      <p className="mt-4 text-sm leading-7 text-muted">{memory.description}</p>
+      <p className="mt-4 text-sm leading-7 text-muted">
+        {stripPlaceholder(memory.description)}
+      </p>
     </Card>
   );
 }

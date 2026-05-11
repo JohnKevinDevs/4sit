@@ -41,7 +41,7 @@ export function StatsSection() {
       <Reveal>
         <div className="mx-auto max-w-3xl text-center">
           <Badge className="mb-5">Números da turma</Badge>
-          <h2 className="section-title">Números da turma</h2>
+          <h2 className="section-title">O tamanho da nossa caminhada</h2>
           <p className="section-subtitle mt-4">
             Alguns números não contam tudo, mas ajudam a lembrar o tamanho da nossa
             caminhada.

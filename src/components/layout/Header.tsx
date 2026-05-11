@@ -34,9 +34,9 @@ export function Header() {
         aria-label="Navegação principal mobile"
         className="border-t border-white/10 px-5 py-2 md:hidden"
       >
-        <ul className="mx-auto flex max-w-6xl gap-2 overflow-x-auto pb-1">
+        <ul className="mx-auto flex max-w-6xl snap-x snap-mandatory gap-2 overflow-x-auto pb-1 [mask-image:linear-gradient(to_right,transparent,black_1rem,black_calc(100%_-_1rem),transparent)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {navigation.map((item) => (
-            <li key={item.href} className="shrink-0">
+            <li key={item.href} className="shrink-0 snap-start">
               <a
                 href={item.href}
                 className="block rounded-md border border-white/10 bg-white/[0.04] px-3 py-2 text-xs font-medium text-muted soft-transition hover:border-blue-soft hover:text-foreground"

@@ -8,6 +8,7 @@ export function Footer() {
           <p className="font-semibold text-foreground">SIT 2026 - CEAP</p>
           <p>{site.slogan}</p>
         </div>
+        {/* TODO: revisar esta frase final com a turma antes da publicação oficial. */}
         <p>Desenvolvido por John Kevin / Equipe SIT.</p>
       </div>
     </footer>

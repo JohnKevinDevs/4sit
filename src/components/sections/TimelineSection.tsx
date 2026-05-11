@@ -12,7 +12,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
 import { timeline } from "@/data/timeline";
-import { cn } from "@/lib/utils";
+import { cn, stripPlaceholder } from "@/lib/utils";
 
 const timelineIcons: Record<string, LucideIcon> = {
   Code2,
@@ -53,7 +53,7 @@ export function TimelineSection() {
               <Reveal key={item.id} delay={index * 0.04}>
                 <article
                   className={cn(
-                    "relative grid min-w-0 gap-5 pl-14 md:grid-cols-[1fr_4rem_1fr] md:gap-6 md:pl-0",
+                    "relative grid min-w-0 gap-4 pl-14 md:grid-cols-[1fr_4rem_1fr] md:pl-0",
                     index > 0 && "md:-mt-8",
                   )}
                 >
@@ -125,7 +125,7 @@ function TimelineCard({
       className={cn("relative overflow-hidden", align === "right" && "md:text-right")}
     >
       <div className={cn("absolute inset-0 opacity-75", isMilestone ? "radial-wash-gold" : "radial-wash")} />
-      <div className="relative grid min-w-0 gap-5 p-5 sm:p-6 lg:grid-cols-[0.78fr_1.22fr]">
+      <div className="relative grid min-w-0 gap-4 p-5 sm:p-6 lg:grid-cols-[0.78fr_1.22fr]">
         <div
           className={cn(
             "relative min-h-40 overflow-hidden rounded-md border bg-background/54",
@@ -165,7 +165,9 @@ function TimelineCard({
           <h3 className="text-balance text-2xl font-semibold leading-tight text-foreground">
             {item.title}
           </h3>
-          <p className="mt-4 text-sm leading-7 text-muted">{item.description}</p>
+          <p className="mt-4 text-sm leading-7 text-muted">
+            {stripPlaceholder(item.description)}
+          </p>
         </div>
       </div>
     </Card>

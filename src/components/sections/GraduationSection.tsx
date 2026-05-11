@@ -8,7 +8,7 @@ import { Reveal } from "@/components/ui/Reveal";
 export function GraduationSection() {
   return (
     <Section id="formatura" spacing="loose" className="bg-white/[0.015]">
-      <div className="grid min-w-0 gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <div className="grid min-w-0 gap-4 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12">
         <Reveal>
           <div className="min-w-0">
             <Badge variant="gold" className="mb-5">

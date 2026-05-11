@@ -15,7 +15,7 @@ const details = [
 export function AboutSection() {
   return (
     <Section id="sobre" className="bg-white/[0.015]">
-      <div className="grid min-w-0 gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
+      <div className="grid min-w-0 gap-4 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:gap-10">
         <Reveal>
           <div className="min-w-0">
             <Badge className="mb-5">Sobre a SIT</Badge>

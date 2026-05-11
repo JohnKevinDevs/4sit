@@ -1,4 +1,5 @@
 import { ArrowRight, Braces, GraduationCap, ImageIcon, Users } from "lucide-react";
+import { Constellation } from "@/components/effects/Constellation";
 import { Section } from "@/components/layout/Section";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -8,8 +9,13 @@ import { site } from "@/data/site";
 
 export function HeroSection() {
   return (
-    <Section id="inicio" spacing="hero" className="min-h-[calc(100vh-84px)]">
-      <div className="grid min-w-0 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+    <Section
+      id="inicio"
+      spacing="hero"
+      className="relative min-h-[calc(100svh-84px)] overflow-hidden"
+    >
+      <Constellation className="-right-16 top-24 h-32 w-[38rem] opacity-70 sm:right-8 lg:top-32" />
+      <div className="relative z-10 grid min-w-0 items-center gap-4 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
         <Reveal>
           <div className="min-w-0 max-w-3xl">
             <Badge className="mb-6">Turma de Informática CEAP</Badge>
@@ -23,11 +29,11 @@ export function HeroSection() {
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Button href="#trajetoria" className="w-full sm:w-auto">
+              <Button href="#trajetoria" className="min-h-12 w-full sm:w-auto">
                 Explorar trajetória
                 <ArrowRight className="size-4" aria-hidden="true" />
               </Button>
-              <Button href="#alunos" variant="secondary" className="w-full sm:w-auto">
+              <Button href="#alunos" variant="secondary" className="min-h-12 w-full sm:w-auto">
                 Ver alunos
               </Button>
             </div>

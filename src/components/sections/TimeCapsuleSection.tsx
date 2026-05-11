@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
 import { timeCapsule, type TimeCapsuleMock } from "@/data/timeCapsule";
-import { cn } from "@/lib/utils";
+import { cn, stripPlaceholder } from "@/lib/utils";
 
 export function TimeCapsuleSection() {
   const [openId, setOpenId] = useState(timeCapsule[0]?.id ?? "");
@@ -19,7 +19,7 @@ export function TimeCapsuleSection() {
           <Badge variant="gold" className="mb-5">
             Cápsula do tempo
           </Badge>
-          <h2 className="section-title">Cápsula do tempo</h2>
+          <h2 className="section-title">Mensagens para o futuro</h2>
           <p className="section-subtitle mt-4">
             Antes de encerrar esse ciclo, cada aluno deixou uma mensagem para o
             futuro. Um registro de quem somos hoje, do que vivemos e do que esperamos
@@ -109,7 +109,7 @@ function CapsuleDetail({ icon: Icon, label, value }: CapsuleDetailProps) {
         <Icon className="size-4" aria-hidden="true" />
         {label}
       </div>
-      <p className="text-sm leading-7 text-muted">{value}</p>
+      <p className="text-sm leading-7 text-muted">{stripPlaceholder(value)}</p>
     </div>
   );
 }

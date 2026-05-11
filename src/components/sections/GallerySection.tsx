@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
 import { gallery } from "@/data/gallery";
-import { cn } from "@/lib/utils";
+import { cn, stripPlaceholder } from "@/lib/utils";
 
 const allFilter = "Todos";
 
@@ -41,7 +41,7 @@ export function GallerySection() {
       </Reveal>
 
       <Reveal delay={0.06}>
-        <div className="mx-auto mt-9 flex max-w-5xl gap-2 overflow-x-auto pb-2 md:flex-wrap md:justify-center md:overflow-visible md:pb-0">
+        <div className="mx-auto mt-9 flex max-w-5xl snap-x snap-mandatory gap-2 overflow-x-auto pb-2 [mask-image:linear-gradient(to_right,transparent,black_1rem,black_calc(100%_-_1rem),transparent)] [scrollbar-width:none] md:flex-wrap md:justify-center md:overflow-visible md:pb-0 md:[mask-image:none] [&::-webkit-scrollbar]:hidden">
           {categories.map((category) => {
             const isActive = category === activeCategory;
 
@@ -53,7 +53,7 @@ export function GallerySection() {
                 variant={isActive ? "primary" : "secondary"}
                 aria-pressed={isActive}
                 onClick={() => setActiveCategory(category)}
-                className="shrink-0"
+                className="shrink-0 snap-start"
               >
                 {category}
               </Button>
@@ -104,7 +104,9 @@ export function GallerySection() {
                 <h3 className="text-xl font-semibold leading-tight text-foreground">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-muted">{item.caption}</p>
+                <p className="mt-3 text-sm leading-6 text-muted">
+                  {stripPlaceholder(item.caption)}
+                </p>
               </div>
             </Card>
           </Reveal>

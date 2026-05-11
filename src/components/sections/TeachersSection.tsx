@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
 import { teachers, type TeacherMock } from "@/data/teachers";
+import { stripPlaceholder } from "@/lib/utils";
 
 export function TeachersSection() {
   return (
@@ -73,7 +74,9 @@ function TeacherCard({ teacher }: { teacher: TeacherMock }) {
               <HeartHandshake className="size-4" aria-hidden="true" />
               Homenagem
             </div>
-            <p className="text-sm leading-7 text-muted">{teacher.message}</p>
+            <p className="text-sm leading-7 text-muted">
+              {stripPlaceholder(teacher.message)}
+            </p>
           </div>
           <div className="mt-auto pt-5">
             <div className="flex items-center gap-2 text-sm text-muted">

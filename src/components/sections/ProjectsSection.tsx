@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
 import { projects, type ProjectMock } from "@/data/projects";
-import { cn } from "@/lib/utils";
+import { cn, stripPlaceholder } from "@/lib/utils";
 
 export function ProjectsSection() {
   return (
@@ -81,7 +81,9 @@ function ProjectCard({
         <h3 className="text-2xl font-semibold leading-tight text-foreground">
           {project.name}
         </h3>
-        <p className="mt-4 text-sm leading-7 text-muted">{project.description}</p>
+        <p className="mt-4 text-sm leading-7 text-muted">
+          {stripPlaceholder(project.description)}
+        </p>
 
         <div className="mt-5">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-muted">
