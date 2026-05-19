@@ -6,29 +6,29 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const stats = [
   {
-    value: "+3 anos",
-    label: "de trajetória",
+    value: "2 anos",
+    label: "De Trajetória",
     description: "Tempo de estudo, prática e evolução técnica.",
     icon: Clock3,
     tone: "blue",
   },
   {
     value: "1 turma",
-    label: "cheia de histórias",
+    label: "Cheia de Histórias",
     description: "Uma jornada coletiva com identidades diferentes.",
     icon: UsersRound,
     tone: "gold",
   },
   {
-    value: "vários projetos",
-    label: "desenvolvidos",
+    value: "Vários projetos",
+    label: "Desenvolvidos",
     description: "Ideias transformadas em protótipos e entregas.",
     icon: FolderKanban,
     tone: "blue",
   },
   {
-    value: "inúmeras memórias",
-    label: "construídas",
+    value: "Inúmeras memórias",
+    label: "Construídas",
     description: "Momentos que ficam para além do laboratório.",
     icon: HeartHandshake,
     tone: "gold",

@@ -9,7 +9,7 @@ export function Footer() {
           <p>{site.slogan}</p>
         </div>
         {/* TODO: revisar esta frase final com a turma antes da publicação oficial. */}
-        <p>Desenvolvido por John Kevin / Equipe SIT.</p>
+        <p>Desenvolvido por Equipe SIT</p>
       </div>
     </footer>
   );
