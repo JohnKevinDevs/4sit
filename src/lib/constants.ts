@@ -1,7 +1,7 @@
 export const colors = {
-  background: "#07111F",
-  primary: "#0066FF",
-  neon: "#00A3FF",
+  background: "#0C0618",
+  primary: "#7C3AED",
+  neon: "#C084FC",
   foreground: "#F5F7FA",
   muted: "#AAB4C0",
   gold: "#D9A441",
