@@ -14,3 +14,16 @@ export function stripPlaceholder(value?: string): string | undefined {
 
   return value;
 }
+
+export function isPlaceholderAsset(value?: string): boolean {
+  return !value || value.includes("/images/placeholders/");
+}
+
+export function getAssetFilename(value?: string): string {
+  if (!value) return "imagem-pendente";
+
+  return value
+    .replace("/images/placeholders/", "")
+    .replace(/^\/images\//, "")
+    .trim();
+}

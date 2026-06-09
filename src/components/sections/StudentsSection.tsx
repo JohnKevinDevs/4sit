@@ -1,8 +1,9 @@
-import { Quote, Sparkles, Target, UserRound } from "lucide-react";
+import { Camera, Code2, Link, Quote, Sparkles, Target, UserRound } from "lucide-react";
 import { Section } from "@/components/layout/Section";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { ImageFrame } from "@/components/ui/ImageFrame";
 import { Reveal } from "@/components/ui/Reveal";
 import { students, type StudentMock } from "@/data/students";
 import { stripPlaceholder } from "@/lib/utils";
@@ -37,15 +38,19 @@ function StudentCard({ student }: { student: StudentMock }) {
   return (
     <Card padding="none" className="group flex h-full min-w-0 flex-col overflow-hidden">
       <div className="relative min-h-56 overflow-hidden border-b border-white/10 bg-background/54">
-        <div className="absolute inset-0 grid-background opacity-55" />
-        <div className="absolute inset-0 radial-wash opacity-75" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/12 via-transparent to-gold/10" />
+        <ImageFrame
+          src={student.image}
+          alt={`Foto de ${student.name}`}
+          icon={UserRound}
+          placeholderLayout="split"
+          showFilename={false}
+          className="absolute inset-0 rounded-none border-0"
+          contentClassName="p-5"
+        />
 
         <div className="relative flex h-full min-h-56 flex-col justify-between p-5">
           <div className="flex items-center justify-between gap-4">
-            <span className="grid size-12 place-items-center rounded-lg border border-blue-soft bg-background/72 text-neon soft-transition group-hover:border-neon">
-              <UserRound className="size-6" aria-hidden="true" />
-            </span>
+            <span aria-hidden="true" />
             <Badge variant="gold">{student.area}</Badge>
           </div>
 
@@ -53,9 +58,6 @@ function StudentCard({ student }: { student: StudentMock }) {
             <div className="mb-4 grid size-20 place-items-center rounded-xl border border-blue-soft bg-primary/10 text-2xl font-semibold text-foreground blue-glow-soft">
               {getInitials(student.name)}
             </div>
-            <p className="break-words font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted">
-              {student.image.replace("/images/placeholders/", "")}
-            </p>
           </div>
         </div>
       </div>
@@ -89,9 +91,10 @@ function StudentCard({ student }: { student: StudentMock }) {
             variant="ghost"
             size="sm"
             aria-label={`GitHub de ${student.name}`}
+            title={`GitHub de ${student.name}`}
             className="size-10 p-0"
           >
-            GH
+            <Code2 className="size-4" aria-hidden="true" />
           </Button>
           <Button
             href={student.links.linkedin}
@@ -100,9 +103,10 @@ function StudentCard({ student }: { student: StudentMock }) {
             variant="ghost"
             size="sm"
             aria-label={`LinkedIn de ${student.name}`}
+            title={`LinkedIn de ${student.name}`}
             className="size-10 p-0"
           >
-            IN
+            <Link className="size-4" aria-hidden="true" />
           </Button>
           <Button
             href={student.links.instagram}
@@ -111,9 +115,10 @@ function StudentCard({ student }: { student: StudentMock }) {
             variant="ghost"
             size="sm"
             aria-label={`Instagram de ${student.name}`}
+            title={`Instagram de ${student.name}`}
             className="size-10 p-0"
           >
-            IG
+            <Camera className="size-4" aria-hidden="true" />
           </Button>
           <Sparkles className="ml-auto size-4 text-gold opacity-70" aria-hidden="true" />
         </div>

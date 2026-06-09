@@ -37,7 +37,7 @@ export function Card({
         "min-w-0 rounded-lg soft-transition",
         variants[variant],
         paddings[padding],
-        interactive && "hover:-translate-y-1 hover:border-blue-soft hover:blue-glow-soft",
+        interactive && "interactive-card",
         className,
       )}
       {...props}

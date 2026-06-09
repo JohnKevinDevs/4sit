@@ -10,6 +10,7 @@ import {
 import { Section } from "@/components/layout/Section";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
+import { ImageFrame } from "@/components/ui/ImageFrame";
 import { Reveal } from "@/components/ui/Reveal";
 import { timeline } from "@/data/timeline";
 import { cn, stripPlaceholder } from "@/lib/utils";
@@ -133,21 +134,15 @@ function TimelineCard({
             align === "right" && "lg:order-2",
           )}
         >
-          <div className="absolute inset-0 grid-background opacity-60" />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-gold/10" />
-          <div className="relative flex h-full min-h-40 flex-col justify-between p-4">
-            <span
-              className={cn(
-                "grid size-10 place-items-center rounded-md border bg-background/72",
-                isMilestone ? "border-gold-soft text-gold" : "border-blue-soft text-neon",
-              )}
-            >
-              <ImageIcon className="size-5" aria-hidden="true" />
-            </span>
-            <p className="mt-8 break-words font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted">
-              {item.image.replace("/images/placeholders/", "")}
-            </p>
-          </div>
+          <ImageFrame
+            src={item.image}
+            alt={item.title}
+            icon={ImageIcon}
+            tone={isMilestone ? "gold" : "blue"}
+            placeholderLayout="split"
+            className="absolute inset-0 rounded-none border-0"
+            contentClassName="p-4"
+          />
         </div>
 
         <div className="min-w-0 self-center">

@@ -2,6 +2,7 @@ import { BookOpen, HeartHandshake, ImageIcon, Sparkles } from "lucide-react";
 import { Section } from "@/components/layout/Section";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
+import { ImageFrame } from "@/components/ui/ImageFrame";
 import { Reveal } from "@/components/ui/Reveal";
 import { teachers, type TeacherMock } from "@/data/teachers";
 import { stripPlaceholder } from "@/lib/utils";
@@ -39,15 +40,20 @@ function TeacherCard({ teacher }: { teacher: TeacherMock }) {
     <Card padding="none" className="group h-full min-w-0 overflow-hidden">
       <div className="grid min-w-0 lg:grid-cols-[0.72fr_1.28fr]">
         <div className="relative min-h-64 overflow-hidden border-b border-white/10 bg-background/54 lg:border-b-0 lg:border-r">
-          <div className="absolute inset-0 grid-background opacity-55" />
-          <div className="absolute inset-0 radial-wash-gold opacity-70" />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-gold/10" />
+          <ImageFrame
+            src={teacher.image}
+            alt={`Foto de ${teacher.name}`}
+            icon={ImageIcon}
+            tone="gold"
+            placeholderLayout="split"
+            showFilename={false}
+            className="absolute inset-0 rounded-none border-0"
+            contentClassName="p-5"
+          />
 
           <div className="relative flex h-full min-h-64 flex-col justify-between p-5">
             <div className="flex items-center justify-between gap-4">
-              <span className="grid size-12 place-items-center rounded-lg border border-gold-soft bg-background/72 text-gold soft-transition group-hover:border-gold">
-                <ImageIcon className="size-6" aria-hidden="true" />
-              </span>
+              <span aria-hidden="true" />
               <Sparkles className="size-4 text-gold opacity-70" aria-hidden="true" />
             </div>
 
@@ -55,9 +61,6 @@ function TeacherCard({ teacher }: { teacher: TeacherMock }) {
               <div className="mb-4 grid size-20 place-items-center rounded-xl border border-gold-soft bg-gold/10 text-2xl font-semibold text-foreground gold-glow">
                 {getInitials(teacher.name)}
               </div>
-              <p className="break-words font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted">
-                {teacher.image.replace("/images/placeholders/", "")}
-              </p>
             </div>
           </div>
         </div>

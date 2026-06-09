@@ -60,11 +60,15 @@ export function TerminalSection() {
               <div className="absolute inset-0 grid-background opacity-35" />
               <div className="absolute inset-0 radial-wash opacity-70" />
 
-              <div className="relative max-w-full overflow-x-auto rounded-lg border border-blue-soft bg-background/78 p-5 font-mono text-sm leading-7 blue-glow-soft">
+              <div className="relative max-w-full overflow-hidden rounded-lg border border-blue-soft bg-background/78 p-5 font-mono text-sm leading-7 blue-glow-soft">
                 {terminalLines.map((line, index) => (
                   <p
                     key={line}
-                    className={index === 0 ? "whitespace-nowrap text-neon" : "text-muted"}
+                    className={
+                      index === 0
+                        ? "break-words text-neon sm:whitespace-nowrap"
+                        : "break-words text-muted"
+                    }
                   >
                     {line}
                   </p>

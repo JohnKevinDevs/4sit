@@ -1,11 +1,12 @@
 "use client";
 
-import { ImageIcon, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Section } from "@/components/layout/Section";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { ImageFrame } from "@/components/ui/ImageFrame";
 import { Reveal } from "@/components/ui/Reveal";
 import { gallery } from "@/data/gallery";
 import { cn, stripPlaceholder } from "@/lib/utils";
@@ -79,22 +80,17 @@ export function GallerySection() {
                   index === 0 && activeCategory === allFilter && "lg:min-h-72",
                 )}
               >
-                <div className="absolute inset-0 grid-background opacity-55" />
-                <div className="absolute inset-0 radial-wash opacity-80" />
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/12 via-transparent to-gold/10" />
-
-                <div className="relative flex h-full min-h-56 flex-col justify-between p-5">
-                  <div className="flex items-center justify-between gap-4">
-                    <span className="grid size-11 place-items-center rounded-md border border-blue-soft bg-background/72 text-neon soft-transition group-hover:border-neon">
-                      <ImageIcon className="size-5" aria-hidden="true" />
-                    </span>
-                    <Sparkles className="size-4 text-gold opacity-75" aria-hidden="true" />
-                  </div>
-
-                  <p className="mt-12 break-words font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted">
-                    {item.image.replace("/images/placeholders/", "")}
-                  </p>
-                </div>
+                <ImageFrame
+                  src={item.image}
+                  alt={item.title}
+                  placeholderLayout="split"
+                  className="absolute inset-0 rounded-none border-0"
+                  contentClassName="p-5"
+                />
+                <Sparkles
+                  className="absolute right-5 top-5 size-4 text-gold opacity-75"
+                  aria-hidden="true"
+                />
               </div>
 
               <div className="p-5">

@@ -3,6 +3,7 @@ import { Section } from "@/components/layout/Section";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { ImageFrame } from "@/components/ui/ImageFrame";
 import { Reveal } from "@/components/ui/Reveal";
 import { projects, type ProjectMock } from "@/data/projects";
 import { cn, stripPlaceholder } from "@/lib/utils";
@@ -53,23 +54,23 @@ function ProjectCard({
           featured && "lg:min-h-72",
         )}
       >
-        <div className="absolute inset-0 grid-background opacity-55" />
-        <div className="absolute inset-0 radial-wash opacity-80" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/12 via-transparent to-gold/10" />
+        <ImageFrame
+          src={project.image}
+          alt={`Imagem do projeto ${project.name}`}
+          icon={ImageIcon}
+          tone={featured ? "gold" : "blue"}
+          placeholderLayout="split"
+          className="absolute inset-0 rounded-none border-0"
+          contentClassName="p-5"
+        />
 
         <div className="relative flex h-full min-h-56 flex-col justify-between p-5">
           <div className="flex items-center justify-between gap-4">
-            <span className="grid size-12 place-items-center rounded-lg border border-blue-soft bg-background/72 text-neon soft-transition group-hover:border-neon">
-              <ImageIcon className="size-6" aria-hidden="true" />
-            </span>
+            <span aria-hidden="true" />
             <Badge variant={featured ? "gold" : "blue"}>
               {featured ? "Destaque" : "Projeto"}
             </Badge>
           </div>
-
-          <p className="mt-12 break-words font-mono text-[0.68rem] uppercase tracking-[0.14em] text-muted">
-            {project.image.replace("/images/placeholders/", "")}
-          </p>
         </div>
       </div>
 

@@ -4,6 +4,7 @@ import { Section } from "@/components/layout/Section";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { ImageFrame } from "@/components/ui/ImageFrame";
 import { Reveal } from "@/components/ui/Reveal";
 import { site } from "@/data/site";
 
@@ -54,21 +55,16 @@ export function HeroSection() {
                 <Braces className="size-5 text-gold" aria-hidden="true" />
               </div>
 
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-blue-soft bg-background/62">
-                <div className="absolute inset-0 grid-background opacity-70" />
-                <div className="absolute inset-0 radial-wash-gold opacity-70" />
-                <div className="relative flex h-full flex-col items-center justify-center px-6 text-center">
-                  <span className="mb-5 grid size-14 place-items-center rounded-lg border border-blue-soft bg-primary/12 text-neon">
-                    <ImageIcon className="size-7" aria-hidden="true" />
-                  </span>
-                  <p className="text-lg font-semibold text-foreground">
-                    Foto oficial da turma
-                  </p>
-                  <p className="mt-2 max-w-sm text-sm leading-6 text-muted">
-                    Placeholder visual para a imagem principal da SIT 2026.
-                  </p>
-                </div>
-              </div>
+              <ImageFrame
+                src="/images/placeholders/hero-turma.jpg"
+                alt="Foto oficial da turma SIT 2026"
+                title="Foto oficial da turma"
+                description="Placeholder visual para a imagem principal da SIT 2026."
+                icon={ImageIcon}
+                priority
+                showFilename={false}
+                className="aspect-[4/3]"
+              />
 
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 <div className="rounded-md border border-white/10 bg-white/[0.035] p-4">

@@ -193,6 +193,20 @@ a {
     box-shadow 180ms ease;
 }
 
+.interactive-card {
+  will-change: auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .interactive-card:hover {
+    transform: translateY(-0.25rem);
+    border-color: var(--border-blue);
+    box-shadow:
+      0 0 0 1px rgba(0, 163, 255, 0.1),
+      0 14px 42px rgba(0, 102, 255, 0.1);
+  }
+}
+
 .grid-background {
   background-image:
     linear-gradient(rgba(170, 180, 192, 0.055) 1px, transparent 1px),

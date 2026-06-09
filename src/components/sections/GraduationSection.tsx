@@ -3,6 +3,7 @@ import { Section } from "@/components/layout/Section";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { ImageFrame } from "@/components/ui/ImageFrame";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function GraduationSection() {
@@ -54,21 +55,16 @@ export function GraduationSection() {
                 <GraduationCap className="size-5 text-gold" aria-hidden="true" />
               </div>
 
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-gold-soft bg-background/62">
-                <div className="absolute inset-0 grid-background opacity-60" />
-                <div className="absolute inset-0 bg-gradient-to-br from-gold/14 via-transparent to-primary/10" />
-                <div className="relative flex h-full flex-col items-center justify-center px-6 text-center">
-                  <span className="mb-5 grid size-14 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold">
-                    <Camera className="size-7" aria-hidden="true" />
-                  </span>
-                  <p className="text-lg font-semibold text-foreground">
-                    Foto oficial da formatura
-                  </p>
-                  <p className="mt-2 max-w-sm text-sm leading-6 text-muted">
-                    Placeholder para o registro final da SIT 2026.
-                  </p>
-                </div>
-              </div>
+              <ImageFrame
+                src="/images/placeholders/formatura-oficial.jpg"
+                alt="Foto oficial da formatura da SIT 2026"
+                title="Foto oficial da formatura"
+                description="Placeholder para o registro final da SIT 2026."
+                icon={Camera}
+                tone="gold"
+                showFilename={false}
+                className="aspect-[4/3]"
+              />
 
               <div className="mt-4 rounded-md border border-white/10 bg-white/[0.035] p-4">
                 <div className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-neon">
