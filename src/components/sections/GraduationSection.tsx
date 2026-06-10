@@ -1,4 +1,4 @@
-import { ArrowUp, Camera, GalleryHorizontal, GraduationCap, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowUp, Camera, GraduationCap, Sparkles } from "lucide-react";
 import { Section } from "@/components/layout/Section";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -29,9 +29,9 @@ export function GraduationSection() {
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Button href="#galeria" className="w-full sm:w-auto">
-                <GalleryHorizontal className="size-4" aria-hidden="true" />
-                Ver galeria
+              <Button href="#trajetoria" className="w-full sm:w-auto">
+                <ArrowRight className="size-4" aria-hidden="true" />
+                Ver trajetória
               </Button>
               <Button href="#inicio" variant="secondary" className="w-full sm:w-auto">
                 <ArrowUp className="size-4" aria-hidden="true" />

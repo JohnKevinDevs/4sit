@@ -2,7 +2,6 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { ActDivider } from "@/components/layout/ActDivider";
 import { AboutSection } from "@/components/sections/AboutSection";
-import { GallerySection } from "@/components/sections/GallerySection";
 import { GraduationSection } from "@/components/sections/GraduationSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { MemoriesSection } from "@/components/sections/MemoriesSection";
@@ -25,7 +24,6 @@ export default function Home() {
         <StatsSection />
         <ActDivider act="02" name="A Trajetória" glyph="chevron" />
         <TimelineSection />
-        <GallerySection />
         <StudentsSection />
         <TeachersSection />
         <ProjectsSection />
