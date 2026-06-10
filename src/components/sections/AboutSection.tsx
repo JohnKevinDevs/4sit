@@ -20,7 +20,7 @@ export function AboutSection() {
           <div className="min-w-0">
             <Badge className="mb-5">Sobre a SIT</Badge>
             <h2 className="section-title">Quem somos</h2>
-            <div className="section-subtitle mt-6 max-w-3xl space-y-5">
+            <div className="section-subtitle mt-5 max-w-3xl space-y-4 sm:mt-6 sm:space-y-5">
               <p>
                 Somos a turma SIT, formada por estudantes de Informática do CEAP. Ao
                 longo da nossa trajetória, vivemos desafios, aprendizados, projetos,
@@ -39,7 +39,7 @@ export function AboutSection() {
           <Card variant="strong" padding="lg" interactive={false} className="relative overflow-hidden">
             <div className="absolute inset-0 radial-wash-gold opacity-70" />
             <div className="relative">
-              <div className="mb-6 flex items-center justify-between gap-4">
+              <div className="mb-5 flex items-center justify-between gap-3 sm:mb-6 sm:gap-4">
                 <div>
                   <p className="section-kicker">perfil.turma</p>
                   <p className="mt-2 text-sm text-muted">Informações provisórias</p>
@@ -54,7 +54,7 @@ export function AboutSection() {
                   return (
                     <div
                       key={item.label}
-                      className="grid grid-cols-[2.25rem_1fr] gap-3 rounded-md border border-white/10 bg-background/36 p-3"
+                      className="grid min-w-0 grid-cols-[2.25rem_1fr] gap-3 rounded-md border border-white/10 bg-background/36 p-3"
                     >
                       <span className="grid size-9 place-items-center rounded-md border border-blue-soft bg-primary/10 text-neon">
                         <Icon className="size-4" aria-hidden="true" />
@@ -63,7 +63,7 @@ export function AboutSection() {
                         <dt className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
                           {item.label}
                         </dt>
-                        <dd className="mt-1 text-sm font-semibold text-foreground">
+                        <dd className="mt-1 break-words text-sm font-semibold text-foreground">
                           {item.value}
                         </dd>
                       </div>

@@ -65,7 +65,7 @@ a {
   margin-inline: auto;
   width: 100%;
   max-width: 72rem;
-  padding-inline: 1.25rem;
+  padding-inline: 1rem;
 }
 
 @media (min-width: 640px) {
@@ -97,7 +97,7 @@ a {
 
 .display-title {
   color: var(--foreground);
-  font-size: clamp(2.75rem, 8vw, 6.75rem);
+  font-size: clamp(2.35rem, 14vw, 6.75rem);
   font-weight: 650;
   letter-spacing: 0;
   line-height: 0.96;
@@ -106,7 +106,7 @@ a {
 
 .section-title {
   color: var(--foreground);
-  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-size: clamp(1.75rem, 8vw, 3.25rem);
   font-weight: 650;
   letter-spacing: 0;
   line-height: 1.08;
@@ -116,16 +116,27 @@ a {
 .section-subtitle {
   color: var(--muted);
   font-size: clamp(1rem, 1.35vw, 1.125rem);
-  line-height: 1.85;
+  line-height: 1.72;
 }
 
 .section-kicker {
   color: var(--neon);
   font-family: var(--font-geist-mono), ui-monospace, monospace;
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .section-subtitle {
+    line-height: 1.85;
+  }
+
+  .section-kicker {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+  }
 }
 
 .glass-card {

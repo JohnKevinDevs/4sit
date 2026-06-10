@@ -67,7 +67,7 @@ export function StatsSection() {
                 >
                   <Icon className="size-5" aria-hidden="true" />
                 </div>
-                <p className="text-3xl font-semibold leading-tight text-foreground">
+                <p className="break-words text-2xl font-semibold leading-tight text-foreground sm:text-3xl">
                   {stat.value}
                 </p>
                 <p className={isGold ? "mt-2 font-semibold text-gold" : "mt-2 font-semibold text-neon"}>

@@ -51,12 +51,12 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-background/78 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-5 px-5 py-4 sm:px-6 lg:px-8">
-        <a href="#inicio" className="group inline-flex items-center gap-3">
-          <span className="grid size-10 place-items-center rounded-md border border-blue-soft bg-primary/12 text-neon soft-transition group-hover:border-neon group-hover:bg-primary/18">
-            <Braces size={20} strokeWidth={2.2} />
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 sm:py-4 lg:px-8">
+        <a href="#inicio" className="group inline-flex min-w-0 items-center gap-2.5 sm:gap-3">
+          <span className="grid size-9 shrink-0 place-items-center rounded-md border border-blue-soft bg-primary/12 text-neon soft-transition group-hover:border-neon group-hover:bg-primary/18 sm:size-10">
+            <Braces size={18} strokeWidth={2.2} />
           </span>
-          <span className="font-mono text-sm font-semibold tracking-[0.2em] text-foreground">
+          <span className="min-w-0 whitespace-nowrap font-mono text-xs font-semibold tracking-[0.14em] text-foreground sm:text-sm sm:tracking-[0.2em]">
             {"{ SIT }"} <span className="text-gold">2026</span>
           </span>
         </a>
@@ -84,7 +84,7 @@ export function Header() {
 
       <nav
         aria-label="Navegação principal mobile"
-        className="border-t border-white/10 px-5 py-2 md:hidden"
+        className="border-t border-white/10 px-4 py-2 md:hidden"
       >
         <ul className="mx-auto flex max-w-6xl snap-x snap-mandatory gap-2 overflow-x-auto pb-1 [mask-image:linear-gradient(to_right,transparent,black_1rem,black_calc(100%_-_1rem),transparent)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {navigation.map((item) => (

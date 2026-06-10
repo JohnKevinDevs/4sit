@@ -29,7 +29,7 @@ export function TerminalSection() {
               registrados como se fossem comandos de uma jornada.
             </p>
 
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            <div className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2">
               <InfoPill icon={Code2} label="Modo" value="Memorial técnico" />
               <InfoPill icon={Save} label="Registro" value="Legado da turma" />
             </div>
@@ -43,24 +43,24 @@ export function TerminalSection() {
             interactive={false}
             className="min-w-0 overflow-hidden"
           >
-            <div className="border-b border-white/10 bg-background/60 px-5 py-4">
+            <div className="border-b border-white/10 bg-background/60 px-4 py-3 sm:px-5 sm:py-4">
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
                   <span className="size-3 rounded-full bg-gold/80" />
                   <span className="size-3 rounded-full bg-neon/70" />
                   <span className="size-3 rounded-full bg-white/30" />
                 </div>
-                <span className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
+                <span className="min-w-0 truncate font-mono text-[0.68rem] uppercase tracking-[0.12em] text-muted sm:text-xs sm:tracking-[0.18em]">
                   sit-terminal.log
                 </span>
               </div>
             </div>
 
-            <div className="relative p-5 sm:p-6">
+            <div className="relative p-4 sm:p-6">
               <div className="absolute inset-0 grid-background opacity-35" />
               <div className="absolute inset-0 radial-wash opacity-70" />
 
-              <div className="relative max-w-full overflow-hidden rounded-lg border border-blue-soft bg-background/78 p-5 font-mono text-sm leading-7 blue-glow-soft">
+              <div className="relative max-w-full overflow-hidden rounded-lg border border-blue-soft bg-background/78 p-4 font-mono text-[0.8rem] leading-7 blue-glow-soft sm:p-5 sm:text-sm">
                 {terminalLines.map((line, index) => (
                   <p
                     key={line}
@@ -75,14 +75,14 @@ export function TerminalSection() {
                 ))}
               </div>
 
-              <div className="relative mt-5 grid gap-3 sm:grid-cols-2">
+              <div className="relative mt-4 grid gap-3 sm:mt-5 sm:grid-cols-2">
                 {commands.map((command) => (
                   <div
                     key={command}
-                    className="flex min-w-0 items-center gap-3 rounded-md border border-white/10 bg-white/[0.035] p-3"
+                    className="flex min-w-0 items-center gap-2.5 rounded-md border border-white/10 bg-white/[0.035] p-3 sm:gap-3"
                   >
                     <Terminal className="size-4 shrink-0 text-neon" aria-hidden="true" />
-                    <span className="break-words font-mono text-sm text-foreground">
+                    <span className="min-w-0 break-words font-mono text-sm text-foreground">
                       &gt; {command}
                     </span>
                   </div>
@@ -104,14 +104,14 @@ interface InfoPillProps {
 
 function InfoPill({ icon: Icon, label, value }: InfoPillProps) {
   return (
-    <div className="rounded-md border border-white/10 bg-white/[0.035] p-4">
+    <div className="rounded-md border border-white/10 bg-white/[0.035] p-3 sm:p-4">
       <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-neon">
         <Icon className="size-4" aria-hidden="true" />
         {label}
       </div>
-      <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
+      <div className="flex min-w-0 items-center gap-2 text-sm font-semibold text-foreground">
         <CheckCircle2 className="size-4 text-gold" aria-hidden="true" />
-        {value}
+        <span className="min-w-0 break-words">{value}</span>
       </div>
     </div>
   );

@@ -13,23 +13,23 @@ export function HeroSection() {
     <Section
       id="inicio"
       spacing="hero"
-      className="relative min-h-[calc(100svh-84px)] overflow-hidden"
+      className="relative min-h-[calc(100svh-116px)] overflow-hidden sm:min-h-[calc(100svh-84px)]"
     >
-      <Constellation className="-right-16 top-24 h-32 w-[38rem] opacity-70 sm:right-8 lg:top-32" />
-      <div className="relative z-10 grid min-w-0 items-center gap-4 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+      <Constellation className="-right-28 top-16 h-28 w-[30rem] opacity-45 sm:-right-16 sm:top-24 sm:h-32 sm:w-[38rem] sm:opacity-70 lg:right-8 lg:top-32" />
+      <div className="relative z-10 grid min-w-0 items-center gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
         <Reveal>
           <div className="min-w-0 max-w-3xl">
-            <Badge className="mb-6">Turma de Informática CEAP</Badge>
+            <Badge className="mb-4 sm:mb-6">Turma de Informática CEAP</Badge>
             <h1 className="display-title text-gradient-subtle">{site.name}</h1>
-            <p className="mt-5 max-w-2xl text-balance text-xl leading-8 text-muted sm:text-2xl">
+            <p className="mt-4 max-w-2xl text-balance text-lg leading-7 text-muted sm:mt-5 sm:text-2xl sm:leading-8">
               {site.slogan}
             </p>
-            <p className="section-subtitle mt-6 max-w-2xl">
+            <p className="section-subtitle mt-5 max-w-2xl sm:mt-6">
               Uma trajetória construída entre projetos, desafios, amizades e momentos que
               marcaram nossa história no CEAP.
             </p>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row">
               <Button href="#trajetoria" className="min-h-12 w-full sm:w-auto">
                 Explorar trajetória
                 <ArrowRight className="size-4" aria-hidden="true" />
@@ -49,8 +49,8 @@ export function HeroSection() {
             className="relative overflow-hidden"
           >
             <div className="absolute inset-0 radial-wash" />
-            <div className="relative p-5 sm:p-6">
-              <div className="mb-5 flex items-center justify-between gap-4">
+            <div className="relative p-4 sm:p-6">
+              <div className="mb-4 flex items-center justify-between gap-4 sm:mb-5">
                 <span className="section-kicker">registro.turma</span>
                 <Braces className="size-5 text-gold" aria-hidden="true" />
               </div>
@@ -67,12 +67,12 @@ export function HeroSection() {
               />
 
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-md border border-white/10 bg-white/[0.035] p-4">
+                <div className="rounded-md border border-white/10 bg-white/[0.035] p-3 sm:p-4">
                   <Users className="mb-3 size-5 text-neon" aria-hidden="true" />
                   <p className="text-sm font-semibold text-foreground">Turma unida</p>
                   <p className="mt-1 text-sm text-muted">Projetos, rotina e histórias</p>
                 </div>
-                <div className="rounded-md border border-white/10 bg-white/[0.035] p-4">
+                <div className="rounded-md border border-white/10 bg-white/[0.035] p-3 sm:p-4">
                   <GraduationCap className="mb-3 size-5 text-gold" aria-hidden="true" />
                   <p className="text-sm font-semibold text-foreground">Rumo à formatura</p>
                   <p className="mt-1 text-sm text-muted">O próximo capítulo começa</p>

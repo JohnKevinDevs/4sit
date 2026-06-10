@@ -42,7 +42,7 @@ export function GallerySection() {
       </Reveal>
 
       <Reveal delay={0.06}>
-        <div className="mx-auto mt-9 flex max-w-5xl snap-x snap-mandatory gap-2 overflow-x-auto pb-2 [mask-image:linear-gradient(to_right,transparent,black_1rem,black_calc(100%_-_1rem),transparent)] [scrollbar-width:none] md:flex-wrap md:justify-center md:overflow-visible md:pb-0 md:[mask-image:none] [&::-webkit-scrollbar]:hidden">
+        <div className="mx-auto mt-8 flex max-w-5xl snap-x snap-mandatory gap-2 overflow-x-auto pb-2 [mask-image:linear-gradient(to_right,transparent,black_1rem,black_calc(100%_-_1rem),transparent)] [scrollbar-width:none] sm:mt-9 md:flex-wrap md:justify-center md:overflow-visible md:pb-0 md:[mask-image:none] [&::-webkit-scrollbar]:hidden">
           {categories.map((category) => {
             const isActive = category === activeCategory;
 
@@ -63,7 +63,7 @@ export function GallerySection() {
         </div>
       </Reveal>
 
-      <div className="mt-10 grid min-w-0 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid min-w-0 gap-4 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3">
         {visibleItems.map((item, index) => (
           <Reveal key={item.id} delay={(index % 6) * 0.03}>
             <Card
@@ -76,7 +76,7 @@ export function GallerySection() {
             >
               <div
                 className={cn(
-                  "relative min-h-56 overflow-hidden border-b border-white/10 bg-background/54",
+                  "relative min-h-48 overflow-hidden border-b border-white/10 bg-background/54 sm:min-h-56",
                   index === 0 && activeCategory === allFilter && "lg:min-h-72",
                 )}
               >
@@ -85,22 +85,22 @@ export function GallerySection() {
                   alt={item.title}
                   placeholderLayout="split"
                   className="absolute inset-0 rounded-none border-0"
-                  contentClassName="p-5"
+                  contentClassName="p-4 sm:p-5"
                 />
                 <Sparkles
-                  className="absolute right-5 top-5 size-4 text-gold opacity-75"
+                  className="absolute right-4 top-4 size-4 text-gold opacity-75 sm:right-5 sm:top-5"
                   aria-hidden="true"
                 />
               </div>
 
-              <div className="p-5">
+              <div className="p-4 sm:p-5">
                 <Badge variant="neutral" className="mb-4">
                   {item.category}
                 </Badge>
-                <h3 className="text-xl font-semibold leading-tight text-foreground">
+                <h3 className="break-words text-xl font-semibold leading-tight text-foreground">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-muted">
+                <p className="mt-3 break-words text-sm leading-6 text-muted">
                   {stripPlaceholder(item.caption)}
                 </p>
               </div>

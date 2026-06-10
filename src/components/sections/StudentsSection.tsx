@@ -23,7 +23,7 @@ export function StudentsSection() {
         </div>
       </Reveal>
 
-      <div className="mt-10 grid min-w-0 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="mt-8 grid min-w-0 gap-4 sm:mt-10 sm:grid-cols-2 xl:grid-cols-4">
         {students.map((student, index) => (
           <Reveal key={student.id} delay={(index % 4) * 0.04}>
             <StudentCard student={student} />
@@ -37,7 +37,7 @@ export function StudentsSection() {
 function StudentCard({ student }: { student: StudentMock }) {
   return (
     <Card padding="none" className="group flex h-full min-w-0 flex-col overflow-hidden">
-      <div className="relative min-h-56 overflow-hidden border-b border-white/10 bg-background/54">
+      <div className="relative min-h-48 overflow-hidden border-b border-white/10 bg-background/54 sm:min-h-56">
         <ImageFrame
           src={student.image}
           alt={`Foto de ${student.name}`}
@@ -45,10 +45,10 @@ function StudentCard({ student }: { student: StudentMock }) {
           placeholderLayout="split"
           showFilename={false}
           className="absolute inset-0 rounded-none border-0"
-          contentClassName="p-5"
+          contentClassName="p-4 sm:p-5"
         />
 
-        <div className="relative flex h-full min-h-56 flex-col justify-between p-5">
+        <div className="relative flex h-full min-h-48 flex-col justify-between p-4 sm:min-h-56 sm:p-5">
           <div className="flex items-center justify-between gap-4">
             <span aria-hidden="true" />
             <Badge variant="gold">{student.area}</Badge>
@@ -62,8 +62,8 @@ function StudentCard({ student }: { student: StudentMock }) {
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
-        <h3 className="text-2xl font-semibold leading-tight text-foreground">
+      <div className="flex flex-1 flex-col p-4 sm:p-5">
+        <h3 className="break-words text-xl font-semibold leading-tight text-foreground sm:text-2xl">
           {student.name}
         </h3>
         <p className="mt-4 border-l border-blue-soft pl-4 text-sm leading-6 text-muted">
@@ -83,7 +83,7 @@ function StudentCard({ student }: { student: StudentMock }) {
           />
         </div>
 
-        <div className="mt-5 flex items-center gap-2 pt-1">
+        <div className="mt-5 flex flex-wrap items-center gap-2 pt-1">
           <Button
             href={student.links.github}
             target="_blank"
@@ -140,7 +140,7 @@ function StudentDetail({ icon: Icon, label, value }: StudentDetailProps) {
         <Icon className="size-3.5" aria-hidden="true" />
         {label}
       </div>
-      <p className="text-sm leading-6 text-muted">{value}</p>
+      <p className="break-words text-sm leading-6 text-muted">{value}</p>
     </div>
   );
 }

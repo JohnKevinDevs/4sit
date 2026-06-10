@@ -23,7 +23,7 @@ export function ProjectsSection() {
         </div>
       </Reveal>
 
-      <div className="mt-10 grid min-w-0 gap-4 lg:grid-cols-2">
+      <div className="mt-8 grid min-w-0 gap-4 sm:mt-10 lg:grid-cols-2">
         {projects.map((project, index) => (
           <Reveal key={project.id} delay={(index % 2) * 0.05}>
             <ProjectCard project={project} featured={index === 0} />
@@ -50,7 +50,7 @@ function ProjectCard({
     >
       <div
         className={cn(
-          "relative min-h-56 overflow-hidden border-b border-white/10 bg-background/54",
+          "relative min-h-48 overflow-hidden border-b border-white/10 bg-background/54 sm:min-h-56",
           featured && "lg:min-h-72",
         )}
       >
@@ -61,10 +61,10 @@ function ProjectCard({
           tone={featured ? "gold" : "blue"}
           placeholderLayout="split"
           className="absolute inset-0 rounded-none border-0"
-          contentClassName="p-5"
+          contentClassName="p-4 sm:p-5"
         />
 
-        <div className="relative flex h-full min-h-56 flex-col justify-between p-5">
+        <div className="relative flex h-full min-h-48 flex-col justify-between p-4 sm:min-h-56 sm:p-5">
           <div className="flex items-center justify-between gap-4">
             <span aria-hidden="true" />
             <Badge variant={featured ? "gold" : "blue"}>
@@ -74,12 +74,12 @@ function ProjectCard({
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
+      <div className="flex flex-1 flex-col p-4 sm:p-6">
         <div className="mb-4 flex items-center gap-3 text-neon">
           <FolderKanban className="size-5" aria-hidden="true" />
           <span className="section-kicker">portfolio.item</span>
         </div>
-        <h3 className="text-2xl font-semibold leading-tight text-foreground">
+        <h3 className="break-words text-xl font-semibold leading-tight text-foreground sm:text-2xl">
           {project.name}
         </h3>
         <p className="mt-4 text-sm leading-7 text-muted">
@@ -104,12 +104,12 @@ function ProjectCard({
             <UsersRound className="size-4" aria-hidden="true" />
             Integrantes
           </div>
-          <p className="text-sm leading-7 text-muted">{project.members.join(", ")}</p>
+          <p className="break-words text-sm leading-7 text-muted">{project.members.join(", ")}</p>
         </div>
 
         <div className="mt-auto pt-5">
           {hasLink ? (
-            <Button href={project.link} target="_blank" rel="noreferrer" variant="secondary">
+            <Button href={project.link} target="_blank" rel="noreferrer" variant="secondary" className="w-full sm:w-auto">
               Ver projeto
               <ExternalLink className="size-4" aria-hidden="true" />
             </Button>

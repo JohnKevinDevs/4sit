@@ -18,17 +18,17 @@ export function GraduationSection() {
             <h2 className="section-title">
               O fim de um ciclo. O começo de muitos caminhos.
             </h2>
-            <p className="section-subtitle mt-6 max-w-3xl">
+            <p className="section-subtitle mt-5 max-w-3xl sm:mt-6">
               A SIT encerra sua jornada no CEAP levando amizades, aprendizados,
               desafios superados e histórias que ficarão para sempre. A formatura
               não marca apenas uma despedida, mas o início de novos capítulos.
             </p>
 
-            <p className="mt-8 text-balance text-3xl font-semibold leading-tight text-gradient-subtle sm:text-4xl">
+            <p className="mt-7 text-balance text-2xl font-semibold leading-tight text-gradient-subtle sm:mt-8 sm:text-4xl">
               O ciclo termina. O legado continua.
             </p>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row">
               <Button href="#trajetoria" className="w-full sm:w-auto">
                 <ArrowRight className="size-4" aria-hidden="true" />
                 Ver trajetória
@@ -49,8 +49,8 @@ export function GraduationSection() {
             className="relative overflow-hidden"
           >
             <div className="absolute inset-0 radial-wash-gold" />
-            <div className="relative p-5 sm:p-6">
-              <div className="mb-5 flex items-center justify-between gap-4">
+            <div className="relative p-4 sm:p-6">
+              <div className="mb-4 flex items-center justify-between gap-4 sm:mb-5">
                 <span className="section-kicker text-gold">foto.formatura</span>
                 <GraduationCap className="size-5 text-gold" aria-hidden="true" />
               </div>
@@ -66,7 +66,7 @@ export function GraduationSection() {
                 className="aspect-[4/3]"
               />
 
-              <div className="mt-4 rounded-md border border-white/10 bg-white/[0.035] p-4">
+              <div className="mt-4 rounded-md border border-white/10 bg-white/[0.035] p-3 sm:p-4">
                 <div className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-neon">
                   <Sparkles className="size-4" aria-hidden="true" />
                   próximo.capítulo

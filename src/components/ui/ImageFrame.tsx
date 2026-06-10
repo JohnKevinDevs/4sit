@@ -50,7 +50,7 @@ export function ImageFrame({
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-gold/10" />
           <div
             className={cn(
-              "relative flex h-full min-h-full flex-col px-6 py-8",
+              "relative flex h-full min-h-full flex-col px-4 py-6 sm:px-6 sm:py-8",
               isSplit
                 ? "items-start justify-between text-left"
                 : "items-center justify-center text-center",
@@ -60,13 +60,13 @@ export function ImageFrame({
             <span
               className={cn(
                 "grid place-items-center rounded-lg border",
-                isSplit ? "size-12" : "mb-5 size-14",
+                isSplit ? "size-11 sm:size-12" : "mb-5 size-12 sm:size-14",
                 isGold
                   ? "border-gold-soft bg-gold/10 text-gold"
                   : "border-blue-soft bg-primary/12 text-neon",
               )}
             >
-              <Icon className={isSplit ? "size-6" : "size-7"} aria-hidden="true" />
+              <Icon className={isSplit ? "size-5 sm:size-6" : "size-6 sm:size-7"} aria-hidden="true" />
             </span>
             {title ? <p className="text-lg font-semibold text-foreground">{title}</p> : null}
             {description ? (

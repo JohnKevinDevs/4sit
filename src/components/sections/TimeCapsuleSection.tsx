@@ -28,7 +28,7 @@ export function TimeCapsuleSection() {
         </div>
       </Reveal>
 
-      <div className="mt-10 grid min-w-0 gap-4 lg:grid-cols-2">
+      <div className="mt-8 grid min-w-0 gap-4 sm:mt-10 lg:grid-cols-2">
         {timeCapsule.map((item, index) => (
           <Reveal key={item.id} delay={(index % 2) * 0.04}>
             <CapsuleCard
@@ -56,14 +56,14 @@ function CapsuleCard({ item, isOpen, onToggle }: CapsuleCardProps) {
         type="button"
         aria-expanded={isOpen}
         onClick={onToggle}
-        className="group flex w-full items-center gap-4 p-5 text-left soft-transition hover:bg-white/[0.035] sm:p-6"
+        className="group flex w-full min-w-0 items-center gap-3 p-4 text-left soft-transition hover:bg-white/[0.035] sm:gap-4 sm:p-6"
       >
-        <span className="grid size-12 shrink-0 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold gold-glow">
-          <Clock3 className="size-6" aria-hidden="true" />
+        <span className="grid size-10 shrink-0 place-items-center rounded-lg border border-gold-soft bg-gold/10 text-gold gold-glow sm:size-12">
+          <Clock3 className="size-5 sm:size-6" aria-hidden="true" />
         </span>
         <span className="min-w-0 flex-1">
           <span className="section-kicker text-gold">mensagem.futuro</span>
-          <span className="mt-1 block text-xl font-semibold leading-tight text-foreground">
+          <span className="mt-1 block break-words text-lg font-semibold leading-tight text-foreground sm:text-xl">
             {item.name}
           </span>
         </span>
@@ -83,7 +83,7 @@ function CapsuleCard({ item, isOpen, onToggle }: CapsuleCardProps) {
         )}
       >
         <div className="min-h-0 overflow-hidden">
-          <div className="border-t border-white/10 p-5 sm:p-6">
+          <div className="border-t border-white/10 p-4 sm:p-6">
             <CapsuleDetail icon={MailOpen} label="Mensagem para o futuro" value={item.message} />
             <div className="mt-3 grid gap-3 sm:grid-cols-2">
               <CapsuleDetail icon={Sparkles} label="Daqui 5 anos" value={item.fiveYears} />
@@ -104,12 +104,12 @@ interface CapsuleDetailProps {
 
 function CapsuleDetail({ icon: Icon, label, value }: CapsuleDetailProps) {
   return (
-    <div className="rounded-md border border-white/10 bg-background/36 p-4">
-      <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-neon">
+    <div className="rounded-md border border-white/10 bg-background/36 p-3 sm:p-4">
+      <div className="mb-3 flex min-w-0 items-center gap-2 text-xs font-semibold uppercase tracking-[0.1em] text-neon sm:tracking-[0.12em]">
         <Icon className="size-4" aria-hidden="true" />
-        {label}
+        <span className="min-w-0 break-words">{label}</span>
       </div>
-      <p className="text-sm leading-7 text-muted">{stripPlaceholder(value)}</p>
+      <p className="break-words text-sm leading-7 text-muted">{stripPlaceholder(value)}</p>
     </div>
   );
 }

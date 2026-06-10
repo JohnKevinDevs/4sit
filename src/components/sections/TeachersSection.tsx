@@ -24,7 +24,7 @@ export function TeachersSection() {
         </div>
       </Reveal>
 
-      <div className="mt-10 grid min-w-0 gap-4 md:grid-cols-2">
+      <div className="mt-8 grid min-w-0 gap-4 sm:mt-10 md:grid-cols-2">
         {teachers.map((teacher, index) => (
           <Reveal key={teacher.id} delay={(index % 2) * 0.05}>
             <TeacherCard teacher={teacher} />
@@ -39,7 +39,7 @@ function TeacherCard({ teacher }: { teacher: TeacherMock }) {
   return (
     <Card padding="none" className="group h-full min-w-0 overflow-hidden">
       <div className="grid min-w-0 lg:grid-cols-[0.72fr_1.28fr]">
-        <div className="relative min-h-64 overflow-hidden border-b border-white/10 bg-background/54 lg:border-b-0 lg:border-r">
+        <div className="relative min-h-52 overflow-hidden border-b border-white/10 bg-background/54 sm:min-h-64 lg:border-b-0 lg:border-r">
           <ImageFrame
             src={teacher.image}
             alt={`Foto de ${teacher.name}`}
@@ -48,10 +48,10 @@ function TeacherCard({ teacher }: { teacher: TeacherMock }) {
             placeholderLayout="split"
             showFilename={false}
             className="absolute inset-0 rounded-none border-0"
-            contentClassName="p-5"
+            contentClassName="p-4 sm:p-5"
           />
 
-          <div className="relative flex h-full min-h-64 flex-col justify-between p-5">
+          <div className="relative flex h-full min-h-52 flex-col justify-between p-4 sm:min-h-64 sm:p-5">
             <div className="flex items-center justify-between gap-4">
               <span aria-hidden="true" />
               <Sparkles className="size-4 text-gold opacity-70" aria-hidden="true" />
@@ -65,11 +65,11 @@ function TeacherCard({ teacher }: { teacher: TeacherMock }) {
           </div>
         </div>
 
-        <div className="flex min-w-0 flex-col p-5 sm:p-6">
+        <div className="flex min-w-0 flex-col p-4 sm:p-6">
           <Badge variant="gold" className="mb-5 w-fit">
             {teacher.subject}
           </Badge>
-          <h3 className="text-2xl font-semibold leading-tight text-foreground">
+          <h3 className="break-words text-xl font-semibold leading-tight text-foreground sm:text-2xl">
             {teacher.name}
           </h3>
           <div className="mt-5 rounded-md border border-white/10 bg-white/[0.035] p-4">
@@ -77,14 +77,14 @@ function TeacherCard({ teacher }: { teacher: TeacherMock }) {
               <HeartHandshake className="size-4" aria-hidden="true" />
               Homenagem
             </div>
-            <p className="text-sm leading-7 text-muted">
+            <p className="break-words text-sm leading-7 text-muted">
               {stripPlaceholder(teacher.message)}
             </p>
           </div>
           <div className="mt-auto pt-5">
-            <div className="flex items-center gap-2 text-sm text-muted">
+            <div className="flex min-w-0 items-start gap-2 text-sm text-muted">
               <BookOpen className="size-4 text-neon" aria-hidden="true" />
-              <span>Espaço preparado para mensagem real da turma.</span>
+              <span className="min-w-0 break-words">Espaço preparado para mensagem real da turma.</span>
             </div>
           </div>
         </div>

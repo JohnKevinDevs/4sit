@@ -36,13 +36,13 @@ export function MemoriesSection() {
       </Reveal>
 
       <Reveal delay={0.06}>
-        <div className="mx-auto mt-8 flex max-w-3xl items-start gap-3 rounded-md border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-muted">
+        <div className="mx-auto mt-7 flex max-w-3xl items-start gap-3 rounded-md border border-white/10 bg-white/[0.035] p-3 text-sm leading-6 text-muted sm:mt-8 sm:p-4">
           <AlertCircle className="mt-0.5 size-5 shrink-0 text-neon/80" aria-hidden="true" />
           <p>Conteúdos sujeitos à validação da turma.</p>
         </div>
       </Reveal>
 
-      <div className="mt-10 grid min-w-0 gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-8 grid min-w-0 gap-4 sm:mt-10 md:grid-cols-2 xl:grid-cols-3">
         {memories.map((memory, index) => (
           <Reveal key={memory.id} delay={(index % 3) * 0.04}>
             <MemoryCard memory={memory} />
@@ -66,10 +66,10 @@ function MemoryCard({ memory }: { memory: MemoryMock }) {
         <Badge variant={meta.badge}>{meta.label}</Badge>
       </div>
 
-      <h3 className="text-2xl font-semibold leading-tight text-foreground">
+      <h3 className="break-words text-xl font-semibold leading-tight text-foreground sm:text-2xl">
         {memory.title}
       </h3>
-      <p className="mt-4 text-sm leading-7 text-muted">
+      <p className="mt-4 break-words text-sm leading-7 text-muted">
         {stripPlaceholder(memory.description)}
       </p>
     </Card>

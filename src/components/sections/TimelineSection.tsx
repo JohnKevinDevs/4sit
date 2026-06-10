@@ -38,10 +38,10 @@ export function TimelineSection() {
         </div>
       </Reveal>
 
-      <div className="relative mt-14">
+      <div className="relative mt-10 sm:mt-14">
         <div
           aria-hidden="true"
-          className="absolute bottom-6 left-5 top-2 w-px bg-gradient-to-b from-neon/0 via-neon/35 to-gold/0 md:left-1/2 md:-translate-x-1/2"
+          className="absolute bottom-6 left-4 top-2 w-px bg-gradient-to-b from-neon/0 via-neon/35 to-gold/0 sm:left-5 md:left-1/2 md:-translate-x-1/2"
         />
 
         <div className="space-y-8 md:space-y-0">
@@ -54,7 +54,7 @@ export function TimelineSection() {
               <Reveal key={item.id} delay={index * 0.04}>
                 <article
                   className={cn(
-                    "relative grid min-w-0 gap-4 pl-14 md:grid-cols-[1fr_4rem_1fr] md:pl-0",
+                    "relative grid min-w-0 gap-4 pl-11 sm:pl-14 md:grid-cols-[1fr_4rem_1fr] md:pl-0",
                     index > 0 && "md:-mt-8",
                   )}
                 >
@@ -72,10 +72,10 @@ export function TimelineSection() {
                     />
                   </div>
 
-                  <div className="absolute left-0 top-6 z-10 md:static md:order-2 md:flex md:justify-center">
+                  <div className="absolute left-0 top-5 z-10 md:static md:order-2 md:flex md:justify-center">
                     <span
                       className={cn(
-                        "grid size-10 place-items-center rounded-lg border bg-background text-neon blue-glow-soft",
+                        "grid size-9 place-items-center rounded-lg border bg-background text-neon blue-glow-soft sm:size-10",
                         isMilestone
                           ? "border-gold-soft text-gold"
                           : "border-blue-soft text-neon",
@@ -126,10 +126,10 @@ function TimelineCard({
       className={cn("relative overflow-hidden", align === "right" && "md:text-right")}
     >
       <div className={cn("absolute inset-0 opacity-75", isMilestone ? "radial-wash-gold" : "radial-wash")} />
-      <div className="relative grid min-w-0 gap-4 p-5 sm:p-6 lg:grid-cols-[0.78fr_1.22fr]">
+      <div className="relative grid min-w-0 gap-4 p-4 sm:p-6 lg:grid-cols-[0.78fr_1.22fr]">
         <div
           className={cn(
-            "relative min-h-40 overflow-hidden rounded-md border bg-background/54",
+            "relative min-h-32 overflow-hidden rounded-md border bg-background/54 sm:min-h-40",
             isMilestone ? "border-gold-soft" : "border-blue-soft",
             align === "right" && "lg:order-2",
           )}
@@ -148,7 +148,7 @@ function TimelineCard({
         <div className="min-w-0 self-center">
           <div
             className={cn(
-              "mb-4 flex items-center gap-3",
+              "mb-4 flex min-w-0 flex-wrap items-center gap-3",
               align === "right" && "md:justify-end",
             )}
           >
@@ -157,7 +157,7 @@ function TimelineCard({
               <Icon className="size-4" aria-hidden="true" />
             </span>
           </div>
-          <h3 className="text-balance text-2xl font-semibold leading-tight text-foreground">
+          <h3 className="text-balance text-xl font-semibold leading-tight text-foreground sm:text-2xl">
             {item.title}
           </h3>
           <p className="mt-4 text-sm leading-7 text-muted">

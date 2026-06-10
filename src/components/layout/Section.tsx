@@ -8,10 +8,10 @@ interface SectionProps extends HTMLAttributes<HTMLElement> {
 }
 
 const spacingClasses: Record<NonNullable<SectionProps["spacing"]>, string> = {
-  compact: "py-14 sm:py-16",
-  default: "py-20 sm:py-24",
-  loose: "py-24 sm:py-32",
-  hero: "py-24 sm:py-28 lg:py-32",
+  compact: "py-12 sm:py-16",
+  default: "py-16 sm:py-24",
+  loose: "py-20 sm:py-32",
+  hero: "py-16 sm:py-28 lg:py-32",
 };
 
 export function Section({
@@ -25,7 +25,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={cn("scroll-mt-28", spacingClasses[spacing], className)}
+      className={cn("scroll-mt-32 sm:scroll-mt-28", spacingClasses[spacing], className)}
       {...props}
     >
       <div className={cn("site-container", containerClassName)}>{children}</div>
