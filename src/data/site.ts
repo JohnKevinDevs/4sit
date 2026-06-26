@@ -10,10 +10,8 @@ export const site = {
 export const navigation: NavigationItem[] = [
   { label: "Início", href: "#inicio" },
   { label: "Sobre", href: "#sobre" },
-  { label: "Trajetória", href: "#trajetoria" },
   { label: "Alunos", href: "#alunos" },
   { label: "Professores", href: "#professores" },
   { label: "Projetos", href: "#projetos" },
-  { label: "Cápsula", href: "#capsula" },
   { label: "Formatura", href: "#formatura" },
 ];

@@ -13,41 +13,38 @@ export const memories: MemoryMock[] = [
     type: "lesson",
     title: "O primeiro Hello, World!",
     description:
-      "Placeholder: memória provisória sobre o primeiro código que apareceu funcionando na tela.",
+      "O começo de tudo: a primeira vez em que a tela respondeu e a turma entendeu que dali sairia muita história.",
   },
   {
-    id: "memoria-bug-coletivo",
+    id: "memoria-hobbit-lucca-borro",
     type: "inside-joke",
-    title: "O bug que uniu a turma",
+    title: "O livro Hobbit",
     description:
-      "Placeholder: lembrança de um erro misterioso que virou história interna e aprendizado coletivo.",
+      "O livro Hobbit, que talvez o Lucca Borro nunca saiba quem leu ou não.",
   },
   {
-    id: "memoria-mostra-tecnica",
+    id: "memoria-confissao-homem-branco",
     type: "moment",
-    title: "A primeira apresentação para visitantes",
-    description:
-      "Placeholder: registro de nervosismo, orgulho e evolução durante uma apresentação pública.",
+    title: "A confissão do Homem Branco",
+    description: "Uma daquelas histórias que a turma entende antes mesmo de alguém terminar de explicar.",
   },
   {
-    id: "memoria-ajuda-entre-colegas",
-    type: "quote",
-    title: "Ninguém compila sozinho",
-    description:
-      "Placeholder: frase temporária para representar a colaboração entre colegas durante o curso.",
-  },
-  {
-    id: "memoria-professores",
+    id: "memoria-nosso-astro-paulo",
     type: "tribute",
-    title: "Quem caminhou junto",
-    description:
-      "Placeholder: espaço para uma memória de gratidão aos professores e orientadores da turma.",
+    title: "O nosso Astro, Paulo",
+    description: "Paulo virou referência própria da turma: presença, resenha e lembrança garantida.",
   },
   {
-    id: "memoria-ultimo-dia",
-    type: "moment",
-    title: "O último dia no laboratório",
+    id: "memoria-advertencia-alef-corredor-polones",
+    type: "inside-joke",
+    title: "Advertência do Alef",
     description:
-      "Placeholder: memória reservada para o encerramento das aulas e começo da fase de formatura.",
+      "Advertência do Alef no NOSSO corredor polonês, até quem apanhou levou.",
+  },
+  {
+    id: "memoria-ultimo-dia-feira-start",
+    type: "moment",
+    title: "O último dia, a Feira Start",
+    description: "O encerramento com cara de entrega final: turma reunida, projetos na mesa e ciclo fechando.",
   },
 ];

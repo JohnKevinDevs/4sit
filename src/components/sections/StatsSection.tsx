@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 const stats = [
   {
     value: "2 anos",
-    label: "De Trajetória",
+    label: "De História",
     description: "Tempo de estudo, prática e evolução técnica.",
     icon: Clock3,
     tone: "blue",

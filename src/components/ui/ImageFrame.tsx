@@ -15,6 +15,8 @@ interface ImageFrameProps {
   placeholderLayout?: "center" | "split";
   className?: string;
   contentClassName?: string;
+  imageClassName?: string;
+  showImageOverlay?: boolean;
 }
 
 export function ImageFrame({
@@ -30,6 +32,8 @@ export function ImageFrame({
   placeholderLayout = "center",
   className,
   contentClassName,
+  imageClassName,
+  showImageOverlay = true,
 }: ImageFrameProps) {
   const isPlaceholder = isPlaceholderAsset(src);
   const isGold = tone === "gold";
@@ -90,11 +94,14 @@ export function ImageFrame({
             src={src ?? ""}
             alt={alt}
             fill
+            unoptimized
             priority={priority}
             sizes={sizes}
-            className="object-cover"
+            className={cn("object-cover", imageClassName)}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/52 via-transparent to-transparent" />
+          {showImageOverlay ? (
+            <div className="absolute inset-0 bg-gradient-to-t from-background/52 via-transparent to-transparent" />
+          ) : null}
         </>
       )}
     </div>

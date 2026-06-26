@@ -29,9 +29,9 @@ export function GraduationSection() {
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row">
-              <Button href="#trajetoria" className="w-full sm:w-auto">
+              <Button href="#alunos" className="w-full sm:w-auto">
                 <ArrowRight className="size-4" aria-hidden="true" />
-                Ver trajetória
+                Ver alunos
               </Button>
               <Button href="#inicio" variant="secondary" className="w-full sm:w-auto">
                 <ArrowUp className="size-4" aria-hidden="true" />

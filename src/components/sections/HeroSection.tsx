@@ -1,4 +1,4 @@
-import { ArrowRight, Braces, GraduationCap, ImageIcon, Users } from "lucide-react";
+import { ArrowRight, Braces, ImageIcon } from "lucide-react";
 import { Constellation } from "@/components/effects/Constellation";
 import { Section } from "@/components/layout/Section";
 import { Badge } from "@/components/ui/Badge";
@@ -30,12 +30,12 @@ export function HeroSection() {
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row">
-              <Button href="#trajetoria" className="min-h-12 w-full sm:w-auto">
-                Explorar trajetória
+              <Button href="#alunos" className="min-h-12 w-full sm:w-auto">
+                Ver alunos
                 <ArrowRight className="size-4" aria-hidden="true" />
               </Button>
-              <Button href="#alunos" variant="secondary" className="min-h-12 w-full sm:w-auto">
-                Ver alunos
+              <Button href="#projetos" variant="secondary" className="min-h-12 w-full sm:w-auto">
+                Ver projetos
               </Button>
             </div>
           </div>
@@ -66,17 +66,10 @@ export function HeroSection() {
                 className="aspect-[4/3]"
               />
 
-              <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-md border border-white/10 bg-white/[0.035] p-3 sm:p-4">
-                  <Users className="mb-3 size-5 text-neon" aria-hidden="true" />
-                  <p className="text-sm font-semibold text-foreground">Turma unida</p>
-                  <p className="mt-1 text-sm text-muted">Projetos, rotina e histórias</p>
-                </div>
-                <div className="rounded-md border border-white/10 bg-white/[0.035] p-3 sm:p-4">
-                  <GraduationCap className="mb-3 size-5 text-gold" aria-hidden="true" />
-                  <p className="text-sm font-semibold text-foreground">Rumo à formatura</p>
-                  <p className="mt-1 text-sm text-muted">O próximo capítulo começa</p>
-                </div>
+              <div className="mt-4 rounded-md border border-white/10 bg-white/[0.035] p-3 sm:p-4">
+                <p className="text-sm font-semibold leading-6 text-foreground">
+                  Será atualizado, aguarde os próximos capítulos!
+                </p>
               </div>
             </div>
           </Card>

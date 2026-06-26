@@ -3,42 +3,38 @@ export interface NavigationItem {
   href: `#${string}`;
 }
 
-export interface TimelineItem {
-  id: string;
-  year: string;
-  title: string;
-  description: string;
-}
-
 export interface Student {
   id: string;
   name: string;
-  role?: string;
+  quote: string;
+  area: string;
   image?: string;
-  quote?: string;
-  links?: {
+  memory: string;
+  future: string;
+  links: {
     github?: string;
     linkedin?: string;
-    portfolio?: string;
+    instagram?: string;
   };
 }
 
 export interface Teacher {
   id: string;
   name: string;
-  subject?: string;
+  subject: string;
   image?: string;
-  tribute?: string;
+  message: string;
+  phrase: string;
 }
 
 export interface Project {
   id: string;
-  title: string;
+  name: string;
   description: string;
   technologies: string[];
+  members: string[];
   image?: string;
-  url?: string;
-  repository?: string;
+  link?: string;
 }
 
 export interface GalleryItem {
@@ -49,17 +45,37 @@ export interface GalleryItem {
   date?: string;
 }
 
+export type MemoryType = "quote" | "moment" | "lesson" | "inside-joke" | "tribute";
+
 export interface MemoryItem {
   id: string;
+  type: MemoryType;
   title: string;
   description: string;
-  author?: string;
-  date?: string;
 }
 
 export interface TimeCapsuleItem {
   id: string;
-  author: string;
+  name: string;
   message: string;
-  unlockLabel?: string;
+  fiveYears: string;
+  advice: string;
+}
+
+export interface TimelineItem {
+  id: string;
+  title: string;
+  period: string;
+  description: string;
+  image?: string;
+  icon: string;
+}
+
+export interface SiteContent {
+  students: Student[];
+  teachers: Teacher[];
+  projects: Project[];
+  memories: MemoryItem[];
+  timeCapsule: TimeCapsuleItem[];
+  timeline: TimelineItem[];
 }

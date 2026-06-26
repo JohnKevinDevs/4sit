@@ -12,8 +12,8 @@ import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { ImageFrame } from "@/components/ui/ImageFrame";
 import { Reveal } from "@/components/ui/Reveal";
-import { timeline } from "@/data/timeline";
 import { cn, stripPlaceholder } from "@/lib/utils";
+import type { TimelineItem } from "@/types/content";
 
 const timelineIcons: Record<string, LucideIcon> = {
   Code2,
@@ -23,7 +23,7 @@ const timelineIcons: Record<string, LucideIcon> = {
   GraduationCap,
 };
 
-export function TimelineSection() {
+export function TimelineSection({ timeline }: { timeline: TimelineItem[] }) {
   return (
     <Section id="trajetoria" className="bg-white/[0.015]">
       <Reveal>
@@ -107,7 +107,7 @@ export function TimelineSection() {
 }
 
 interface TimelineCardProps {
-  item: (typeof timeline)[number];
+  item: TimelineItem;
   Icon: LucideIcon;
   isMilestone: boolean;
   align?: "left" | "right";

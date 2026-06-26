@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { ImageFrame } from "@/components/ui/ImageFrame";
 import { Reveal } from "@/components/ui/Reveal";
-import { students, type StudentMock } from "@/data/students";
-import { stripPlaceholder } from "@/lib/utils";
+import { cn, stripPlaceholder } from "@/lib/utils";
+import type { Student } from "@/types/content";
 
-export function StudentsSection() {
+export function StudentsSection({ students }: { students: Student[] }) {
   return (
     <Section id="alunos" className="bg-white/[0.015]">
       <Reveal>
@@ -34,32 +34,27 @@ export function StudentsSection() {
   );
 }
 
-function StudentCard({ student }: { student: StudentMock }) {
+function StudentCard({ student }: { student: Student }) {
+  const { github, linkedin, instagram } = student.links;
+
   return (
     <Card padding="none" className="group flex h-full min-w-0 flex-col overflow-hidden">
-      <div className="relative min-h-48 overflow-hidden border-b border-white/10 bg-background/54 sm:min-h-56">
-        <ImageFrame
-          src={student.image}
-          alt={`Foto de ${student.name}`}
-          icon={UserRound}
-          placeholderLayout="split"
-          showFilename={false}
-          className="absolute inset-0 rounded-none border-0"
-          contentClassName="p-4 sm:p-5"
-        />
-
-        <div className="relative flex h-full min-h-48 flex-col justify-between p-4 sm:min-h-56 sm:p-5">
-          <div className="flex items-center justify-between gap-4">
-            <span aria-hidden="true" />
-            <Badge variant="gold">{student.area}</Badge>
-          </div>
-
-          <div>
-            <div className="mb-4 grid size-20 place-items-center rounded-xl border border-blue-soft bg-primary/10 text-2xl font-semibold text-foreground blue-glow-soft">
-              {getInitials(student.name)}
-            </div>
-          </div>
+      <div className="border-b border-white/10 bg-background/54 px-4 py-6 text-center sm:px-5">
+        <div className="mx-auto mb-4 size-40 rounded-full border border-blue-soft bg-background/70 p-1 blue-glow-soft sm:size-44">
+          <ImageFrame
+            src={student.image}
+            alt={`Foto de ${student.name}`}
+            icon={UserRound}
+            placeholderLayout="center"
+            showFilename={false}
+            showImageOverlay={false}
+            className="size-full rounded-full border-0 bg-white/[0.035]"
+            contentClassName="items-center justify-center p-4"
+            imageClassName={cn("object-cover object-center", getPortraitClassName(student.id))}
+          />
         </div>
+
+        <Badge variant="gold">{student.area}</Badge>
       </div>
 
       <div className="flex flex-1 flex-col p-4 sm:p-5">
@@ -83,43 +78,49 @@ function StudentCard({ student }: { student: StudentMock }) {
           />
         </div>
 
-        <div className="mt-5 flex flex-wrap items-center gap-2 pt-1">
-          <Button
-            href={student.links.github}
-            target="_blank"
-            rel="noreferrer"
-            variant="ghost"
-            size="sm"
-            aria-label={`GitHub de ${student.name}`}
-            title={`GitHub de ${student.name}`}
-            className="size-10 p-0"
-          >
-            <Code2 className="size-4" aria-hidden="true" />
-          </Button>
-          <Button
-            href={student.links.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            variant="ghost"
-            size="sm"
-            aria-label={`LinkedIn de ${student.name}`}
-            title={`LinkedIn de ${student.name}`}
-            className="size-10 p-0"
-          >
-            <Link className="size-4" aria-hidden="true" />
-          </Button>
-          <Button
-            href={student.links.instagram}
-            target="_blank"
-            rel="noreferrer"
-            variant="ghost"
-            size="sm"
-            aria-label={`Instagram de ${student.name}`}
-            title={`Instagram de ${student.name}`}
-            className="size-10 p-0"
-          >
-            <Camera className="size-4" aria-hidden="true" />
-          </Button>
+        <div className="mt-auto flex flex-wrap items-center gap-2 pt-5">
+          {github ? (
+            <Button
+              href={github}
+              target="_blank"
+              rel="noreferrer"
+              variant="ghost"
+              size="sm"
+              aria-label={`GitHub de ${student.name}`}
+              title={`GitHub de ${student.name}`}
+              className="size-10 p-0"
+            >
+              <Code2 className="size-4" aria-hidden="true" />
+            </Button>
+          ) : null}
+          {linkedin ? (
+            <Button
+              href={linkedin}
+              target="_blank"
+              rel="noreferrer"
+              variant="ghost"
+              size="sm"
+              aria-label={`LinkedIn de ${student.name}`}
+              title={`LinkedIn de ${student.name}`}
+              className="size-10 p-0"
+            >
+              <Link className="size-4" aria-hidden="true" />
+            </Button>
+          ) : null}
+          {instagram ? (
+            <Button
+              href={instagram}
+              target="_blank"
+              rel="noreferrer"
+              variant="ghost"
+              size="sm"
+              aria-label={`Instagram de ${student.name}`}
+              title={`Instagram de ${student.name}`}
+              className="size-10 p-0"
+            >
+              <Camera className="size-4" aria-hidden="true" />
+            </Button>
+          ) : null}
           <Sparkles className="ml-auto size-4 text-gold opacity-70" aria-hidden="true" />
         </div>
       </div>
@@ -145,12 +146,18 @@ function StudentDetail({ icon: Icon, label, value }: StudentDetailProps) {
   );
 }
 
-function getInitials(name: string) {
-  return name
-    .split(" ")
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((part) => part[0])
-    .join("")
-    .toUpperCase();
+function getPortraitClassName(studentId: string) {
+  if (studentId === "fernando-muniz") return "object-[center_30%]";
+  if (studentId === "john-kevin-alves") return "object-[center_30%]";
+  if (studentId === "thiago-paes-moreira") return "object-[center_30%]";
+  if (studentId === "jefferson-dos-santos-lima-sousa")
+    return "object-[center_30%]";
+  if (studentId === "murilo-cesar") return "object-[center_30%]";
+  if (studentId === "renan-da-silva-oliveira") return "object-[center_30%]";
+  if (studentId === "matheus-tenorio") return "object-[center_34%]";
+  if (studentId === "pablo-ferreira") return "object-[center_22%]";
+  if (studentId === "pedro-andrade") return "object-[center_26%]";
+  if (studentId === "lucas-alves-pires") return "object-[center_24%]";
+  if (studentId === "guilherme-batista-da-silva") return "object-[center_24%]";
+  return "";
 }

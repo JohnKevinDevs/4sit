@@ -6,10 +6,10 @@ import { Section } from "@/components/layout/Section";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
-import { timeCapsule, type TimeCapsuleMock } from "@/data/timeCapsule";
 import { cn, stripPlaceholder } from "@/lib/utils";
+import type { TimeCapsuleItem } from "@/types/content";
 
-export function TimeCapsuleSection() {
+export function TimeCapsuleSection({ timeCapsule }: { timeCapsule: TimeCapsuleItem[] }) {
   const [openId, setOpenId] = useState(timeCapsule[0]?.id ?? "");
 
   return (
@@ -44,7 +44,7 @@ export function TimeCapsuleSection() {
 }
 
 interface CapsuleCardProps {
-  item: TimeCapsuleMock;
+  item: TimeCapsuleItem;
   isOpen: boolean;
   onToggle: () => void;
 }

@@ -3,8 +3,8 @@ import { Section } from "@/components/layout/Section";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
-import { memories, type MemoryMock, type MemoryType } from "@/data/memories";
 import { stripPlaceholder } from "@/lib/utils";
+import type { MemoryItem, MemoryType } from "@/types/content";
 
 const memoryMeta: Record<
   MemoryType,
@@ -21,7 +21,7 @@ const memoryMeta: Record<
   tribute: { label: "Homenagem", icon: HeartHandshake, badge: "gold" },
 };
 
-export function MemoriesSection() {
+export function MemoriesSection({ memories }: { memories: MemoryItem[] }) {
   return (
     <Section id="memorias">
       <Reveal>
@@ -53,7 +53,7 @@ export function MemoriesSection() {
   );
 }
 
-function MemoryCard({ memory }: { memory: MemoryMock }) {
+function MemoryCard({ memory }: { memory: MemoryItem }) {
   const meta = memoryMeta[memory.type];
   const Icon = meta.icon;
 

@@ -10,10 +10,11 @@ import { StatsSection } from "@/components/sections/StatsSection";
 import { StudentsSection } from "@/components/sections/StudentsSection";
 import { TeachersSection } from "@/components/sections/TeachersSection";
 import { TerminalSection } from "@/components/sections/TerminalSection";
-import { TimeCapsuleSection } from "@/components/sections/TimeCapsuleSection";
-import { TimelineSection } from "@/components/sections/TimelineSection";
+import { getSiteContent } from "@/lib/content";
 
 export default function Home() {
+  const content = getSiteContent();
+
   return (
     <div className="relative flex min-h-screen flex-col">
       <Header />
@@ -22,14 +23,11 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <StatsSection />
-        <ActDivider act="02" name="A Trajetória" glyph="chevron" />
-        <TimelineSection />
-        <StudentsSection />
-        <TeachersSection />
-        <ProjectsSection />
-        <ActDivider act="03" name="O Legado" glyph="sparkles" />
-        <MemoriesSection />
-        <TimeCapsuleSection />
+        <StudentsSection students={content.students} />
+        <TeachersSection teachers={content.teachers} />
+        <ProjectsSection projects={content.projects} />
+        <ActDivider act="02" name="O Legado" glyph="sparkles" />
+        <MemoriesSection memories={content.memories} />
         <TerminalSection />
         <GraduationSection />
       </main>
