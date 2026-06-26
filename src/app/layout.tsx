@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "SIT 2026 | CEAP",
-  description: "Do primeiro código ao próximo capítulo.",
+  description: "Do primeiro Código ao Próximo Capítulo.",
 };
 
 export default function RootLayout({

@@ -1,4 +1,4 @@
-import { AlertCircle, BookOpen, HeartHandshake, Lightbulb, MessageSquareQuote, Sparkles } from "lucide-react";
+import { BookOpen, HeartHandshake, Lightbulb, MessageSquareQuote, Sparkles } from "lucide-react";
 import { Section } from "@/components/layout/Section";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
@@ -32,13 +32,6 @@ export function MemoriesSection({ memories }: { memories: MemoryItem[] }) {
             Toda turma tem frases, momentos e histórias que só quem viveu entende.
             Essa seção guarda um pouco da personalidade da SIT.
           </p>
-        </div>
-      </Reveal>
-
-      <Reveal delay={0.06}>
-        <div className="mx-auto mt-7 flex max-w-3xl items-start gap-3 rounded-md border border-white/10 bg-white/[0.035] p-3 text-sm leading-6 text-muted sm:mt-8 sm:p-4">
-          <AlertCircle className="mt-0.5 size-5 shrink-0 text-neon/80" aria-hidden="true" />
-          <p>Conteúdos sujeitos à validação da turma.</p>
         </div>
       </Reveal>
 

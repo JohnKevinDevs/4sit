@@ -32,20 +32,24 @@ export function getSiteContent(): SiteContent {
 }
 
 export function getStudentsContent(): Student[] {
-  return students.map((student) => ({
-    id: student.id || slugify(student.name),
-    name: student.name,
-    quote: student.quote,
-    area: student.area,
-    image: resolveSectionImage("students", student.name, student.image),
-    memory: student.memory,
-    future: student.future,
-    links: {
-      github: student.links.github,
-      linkedin: student.links.linkedin,
-      instagram: student.links.instagram,
-    },
-  }));
+  return students
+    .map((student) => ({
+      id: student.id || slugify(student.name),
+      name: student.name,
+      quote: student.quote,
+      area: student.area,
+      image: resolveSectionImage("students", student.name, student.image),
+      memory: student.memory,
+      future: student.future,
+      links: {
+        github: student.links.github,
+        linkedin: student.links.linkedin,
+        instagram: student.links.instagram,
+      },
+    }))
+    .sort((first, second) =>
+      first.name.localeCompare(second.name, "pt-BR", { sensitivity: "base" }),
+    );
 }
 
 export function getTeachersContent(): Teacher[] {

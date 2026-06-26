@@ -59,7 +59,7 @@ export function HeroSection() {
                 src="/images/placeholders/hero-turma.jpg"
                 alt="Foto oficial da turma SIT 2026"
                 title="Foto oficial da turma"
-                description="Placeholder visual para a imagem principal da SIT 2026."
+                description="Registro oficial da turma em breve."
                 icon={ImageIcon}
                 priority
                 showFilename={false}

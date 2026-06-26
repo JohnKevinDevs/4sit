@@ -59,7 +59,7 @@ export function GraduationSection() {
                 src="/images/placeholders/formatura-oficial.jpg"
                 alt="Foto oficial da formatura da SIT 2026"
                 title="Foto oficial da formatura"
-                description="Placeholder para o registro final da SIT 2026."
+                description="Registro final da SIT 2026 em breve."
                 icon={Camera}
                 tone="gold"
                 showFilename={false}
@@ -72,7 +72,7 @@ export function GraduationSection() {
                   próximo.capítulo
                 </div>
                 <p className="text-sm leading-6 text-muted">
-                  Espaço reservado para a mensagem oficial de encerramento da turma.
+                  Do primeiro Código ao Próximo Capítulo.
                 </p>
               </div>
             </div>
