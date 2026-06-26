@@ -106,8 +106,8 @@ function ProjectCard({
           <p className="break-words text-sm leading-7 text-muted">{project.members.join(", ")}</p>
         </div>
 
-        <div className="mt-auto pt-5">
-          {hasLink ? (
+        {hasLink ? (
+          <div className="mt-auto pt-5">
             <Button
               href={project.link}
               target="_blank"
@@ -118,10 +118,8 @@ function ProjectCard({
               Ver projeto
               <ExternalLink className="size-4" aria-hidden="true" />
             </Button>
-          ) : (
-            <Badge variant="gold">Link em breve</Badge>
-          )}
-        </div>
+          </div>
+        ) : null}
       </div>
     </Card>
   );

@@ -42,7 +42,7 @@ export function AboutSection() {
               <div className="mb-5 flex items-center justify-between gap-3 sm:mb-6 sm:gap-4">
                 <div>
                   <p className="section-kicker">perfil.turma</p>
-                  <p className="mt-2 text-sm text-muted">Informações provisórias</p>
+                  <p className="mt-2 text-sm text-muted">Identidade da turma</p>
                 </div>
                 <Badge variant="gold">2026</Badge>
               </div>

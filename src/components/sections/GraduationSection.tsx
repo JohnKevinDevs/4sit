@@ -59,7 +59,7 @@ export function GraduationSection() {
                 src="/images/placeholders/formatura-oficial.jpg"
                 alt="Foto oficial da formatura da SIT 2026"
                 title="Foto oficial da formatura"
-                description="Registro final da SIT 2026 em breve."
+                description="O encerramento de um ciclo e o início dos próximos caminhos."
                 icon={Camera}
                 tone="gold"
                 showFilename={false}

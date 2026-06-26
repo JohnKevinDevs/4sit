@@ -59,7 +59,7 @@ export function HeroSection() {
                 src="/images/placeholders/hero-turma.jpg"
                 alt="Foto oficial da turma SIT 2026"
                 title="Foto oficial da turma"
-                description="Registro oficial da turma em breve."
+                description="A turma que transformou desafios, projetos e amizade em história."
                 icon={ImageIcon}
                 priority
                 showFilename={false}
@@ -68,7 +68,7 @@ export function HeroSection() {
 
               <div className="mt-4 rounded-md border border-white/10 bg-white/[0.035] p-3 sm:p-4">
                 <p className="text-sm font-semibold leading-6 text-foreground">
-                  Será atualizado, aguarde os próximos capítulos!
+                  Do primeiro Código ao Próximo Capítulo.
                 </p>
               </div>
             </div>

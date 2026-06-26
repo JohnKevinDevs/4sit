@@ -14,7 +14,7 @@ const terminalLines = [
   "Status: legado salvo com sucesso.",
 ];
 
-const commands = ["ver_turma", "ver_memorias", "abrir_capsula", "salvar_legado"];
+const commands = ["ver_turma", "ver_memorias", "ver_projetos", "salvar_legado"];
 
 export function TerminalSection() {
   return (
