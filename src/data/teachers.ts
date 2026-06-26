@@ -11,7 +11,7 @@ export const teachers: TeacherMock[] = [
   {
     id: "alef-jesus-de-souza",
     name: "Alef Jesus de Souza",
-    subject: "DW11; DW22; DW33; DW44; DS31 / Desenvolvimento Web e Programação",
+    subject: "Desenvolvimento Web e Programação",
     message:
       'Deixo uma mensagem que tem me ajudado muito nesses últimos anos: "Trabalhe, sirva, seja forte e não encha o saco!"',
     phrase: "Devs",
@@ -57,7 +57,7 @@ export const teachers: TeacherMock[] = [
   {
     id: "harrison-parizotto-da-paixao",
     name: "Harrison Parizotto da Paixão",
-    subject: "Religião 44",
+    subject: "Religião",
     message:
       "Ao chegarmos ao fim de um período de estudos e de dedicação acadêmica, como traçaram no CEAP ao longo desses anos, é sempre ocasião para olhar para trás e agradecer, olhar ao redor e analisar onde chegou e lançar os olhos à frente para projetar onde chegar. O ponto alcançado hoje nunca poderá ser o ponto final, sempre há mais a fazer, sempre há um caminho a percorrer. Caminhem certos do sucesso e confiantes que por onde passarem poderão deixar marcas de uma vida que inspira e que é sinal de sentido! Sejam úteis, fiéis e ousados! É só o começo!",
     phrase: "Engajamento e amizade.",
