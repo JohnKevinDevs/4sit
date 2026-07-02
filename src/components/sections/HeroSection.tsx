@@ -1,4 +1,4 @@
-import { ArrowRight, Braces, ImageIcon } from "lucide-react";
+import { ArrowRight, Braces } from "lucide-react";
 import { Constellation } from "@/components/effects/Constellation";
 import { Section } from "@/components/layout/Section";
 import { Badge } from "@/components/ui/Badge";
@@ -56,14 +56,13 @@ export function HeroSection() {
               </div>
 
               <ImageFrame
-                src="/images/placeholders/hero-turma.jpg"
+                src="/images/hero/foto-oficial-4sit.jpeg"
                 alt="Foto oficial da turma SIT 2026"
-                title="Foto oficial da turma"
-                description="A turma que transformou desafios, projetos e amizade em história."
-                icon={ImageIcon}
                 priority
                 showFilename={false}
-                className="aspect-[4/3]"
+                showImageOverlay={false}
+                className="aspect-[3/2] border-white/10 bg-black/40"
+                imageClassName="object-contain object-center"
               />
 
               <div className="mt-4 rounded-md border border-white/10 bg-white/[0.035] p-3 sm:p-4">
